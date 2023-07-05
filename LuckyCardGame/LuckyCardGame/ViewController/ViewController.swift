@@ -17,6 +17,7 @@ fileprivate enum Constant {
 }
 
 final class ViewController: UIViewController {
+    //MARK: - UI
     lazy var headerView: UIView = {
         let view = UIView()
         view.backgroundColor = .yellow
@@ -37,6 +38,7 @@ final class ViewController: UIViewController {
         return view
     }()
     
+    //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -48,6 +50,7 @@ final class ViewController: UIViewController {
         configureFrame()
     }
     
+    //MARK: - Helper
     private func configureUI() {
         [headerView, deckStackView, footerView].forEach {
             view.addSubview($0)
