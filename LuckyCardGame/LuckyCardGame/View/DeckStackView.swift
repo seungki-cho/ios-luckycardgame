@@ -11,12 +11,12 @@ final class DeckStackView: UIView {
     var subDecks: [DeckView] = []
     
     var spacing: CGFloat = 0.0 {
-        willSet {
+        didSet {
             configureFrame()
         }
     }
     var deckHeight: CGFloat = 0.0 {
-        willSet {
+        didSet {
             configureFrame()
         }
     }
