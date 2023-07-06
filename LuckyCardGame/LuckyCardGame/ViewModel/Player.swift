@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+struct Player {
+    private var hand: [LuckyCard] = []
+    
+    mutating func getCards(cards: [LuckyCard]) {
+        hand.append(contentsOf: cards)
+    }
+}
