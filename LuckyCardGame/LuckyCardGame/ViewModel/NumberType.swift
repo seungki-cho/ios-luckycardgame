@@ -15,14 +15,12 @@ import Foundation
  */
 
 struct NumberType: Typeable {
-    static var allCases: [NumberType] = (1...12).map{ NumberType(value: $0) }
-    
-    typealias ValueType = Int
+    var value: Int
     
     init(value: Int) {
         self.value = (1...12) ~= value ? value : 1
     }
     
-    var value: Int
     var description: String { value >= 10 ? "\(value)" : "0\(value)" }
+    static var allCases: [NumberType] = (1...12).map{ NumberType(value: $0) }
 }
