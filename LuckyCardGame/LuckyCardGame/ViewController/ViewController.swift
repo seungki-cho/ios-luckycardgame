@@ -45,7 +45,7 @@ final class ViewController: UIViewController {
         view.backgroundColor = .white
         configureUI()
         
-        let deck = Deck<AnimalType, NumberType>()
+        let deck = LuckyDeck()
         print(deck.description)
     }
     
