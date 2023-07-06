@@ -24,6 +24,7 @@
 		C378BAA12A5655DF00479D47 /* LuckyCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C378BAA02A5655DF00479D47 /* LuckyCard.swift */; };
 		C378BAA32A56560400479D47 /* LuckyDeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = C378BAA22A56560400479D47 /* LuckyDeck.swift */; };
 		C378BAA52A5697E700479D47 /* LuckyGameRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = C378BAA42A5697E700479D47 /* LuckyGameRule.swift */; };
+		C378BAA72A569CDD00479D47 /* LuckyGameService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C378BAA62A569CDD00479D47 /* LuckyGameService.swift */; };
 		C378BAA92A569CED00479D47 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = C378BAA82A569CED00479D47 /* Player.swift */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +67,7 @@
 		C378BAA02A5655DF00479D47 /* LuckyCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuckyCard.swift; sourceTree = "<group>"; };
 		C378BAA22A56560400479D47 /* LuckyDeck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuckyDeck.swift; sourceTree = "<group>"; };
 		C378BAA42A5697E700479D47 /* LuckyGameRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuckyGameRule.swift; sourceTree = "<group>"; };
+		C378BAA62A569CDD00479D47 /* LuckyGameService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuckyGameService.swift; sourceTree = "<group>"; };
 		C378BAA82A569CED00479D47 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -170,6 +172,7 @@
 				C378BAA02A5655DF00479D47 /* LuckyCard.swift */,
 				C378BAA22A56560400479D47 /* LuckyDeck.swift */,
 				C378BAA42A5697E700479D47 /* LuckyGameRule.swift */,
+				C378BAA62A569CDD00479D47 /* LuckyGameService.swift */,
 				C378BAA82A569CED00479D47 /* Player.swift */,
 			);
 			path = ViewModel;
@@ -327,6 +330,7 @@
 				C378BA9B2A56559B00479D47 /* Typeable.swift in Sources */,
 				C378BA7E2A540E3F00479D47 /* DeckView.swift in Sources */,
 				C378BA802A540E5B00479D47 /* DeckStackView.swift in Sources */,
+				C378BAA72A569CDD00479D47 /* LuckyGameService.swift in Sources */,
 				C378BAA32A56560400479D47 /* LuckyDeck.swift in Sources */,
 				C378BA9D2A5655B900479D47 /* AnimalType.swift in Sources */,
 			);
