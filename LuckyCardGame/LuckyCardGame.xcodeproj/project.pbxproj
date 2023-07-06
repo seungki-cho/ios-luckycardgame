@@ -18,6 +18,11 @@
 		C378BA7E2A540E3F00479D47 /* DeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C378BA7D2A540E3F00479D47 /* DeckView.swift */; };
 		C378BA802A540E5B00479D47 /* DeckStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C378BA7F2A540E5B00479D47 /* DeckStackView.swift */; };
 		C378BA822A540E7F00479D47 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C378BA812A540E7F00479D47 /* PaddingLabel.swift */; };
+		C378BA9B2A56559B00479D47 /* Typeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C378BA9A2A56559B00479D47 /* Typeable.swift */; };
+		C378BA9D2A5655B900479D47 /* AnimalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C378BA9C2A5655B900479D47 /* AnimalType.swift */; };
+		C378BA9F2A5655BF00479D47 /* NumberType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C378BA9E2A5655BF00479D47 /* NumberType.swift */; };
+		C378BAA12A5655DF00479D47 /* LuckyCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C378BAA02A5655DF00479D47 /* LuckyCard.swift */; };
+		C378BAA32A56560400479D47 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = C378BAA22A56560400479D47 /* Deck.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +58,11 @@
 		C378BA7D2A540E3F00479D47 /* DeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckView.swift; sourceTree = "<group>"; };
 		C378BA7F2A540E5B00479D47 /* DeckStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckStackView.swift; sourceTree = "<group>"; };
 		C378BA812A540E7F00479D47 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
+		C378BA9A2A56559B00479D47 /* Typeable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typeable.swift; sourceTree = "<group>"; };
+		C378BA9C2A5655B900479D47 /* AnimalType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalType.swift; sourceTree = "<group>"; };
+		C378BA9E2A5655BF00479D47 /* NumberType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberType.swift; sourceTree = "<group>"; };
+		C378BAA02A5655DF00479D47 /* LuckyCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuckyCard.swift; sourceTree = "<group>"; };
+		C378BAA22A56560400479D47 /* Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +160,11 @@
 		C378BA7B2A540CDC00479D47 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				C378BA9A2A56559B00479D47 /* Typeable.swift */,
+				C378BA9C2A5655B900479D47 /* AnimalType.swift */,
+				C378BA9E2A5655BF00479D47 /* NumberType.swift */,
+				C378BAA02A5655DF00479D47 /* LuckyCard.swift */,
+				C378BAA22A56560400479D47 /* Deck.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -297,10 +312,15 @@
 			files = (
 				C378BA822A540E7F00479D47 /* PaddingLabel.swift in Sources */,
 				C378BA4D2A53C29200479D47 /* ViewController.swift in Sources */,
+				C378BAA12A5655DF00479D47 /* LuckyCard.swift in Sources */,
 				C378BA492A53C29200479D47 /* AppDelegate.swift in Sources */,
 				C378BA4B2A53C29200479D47 /* SceneDelegate.swift in Sources */,
+				C378BA9F2A5655BF00479D47 /* NumberType.swift in Sources */,
+				C378BA9B2A56559B00479D47 /* Typeable.swift in Sources */,
 				C378BA7E2A540E3F00479D47 /* DeckView.swift in Sources */,
 				C378BA802A540E5B00479D47 /* DeckStackView.swift in Sources */,
+				C378BAA32A56560400479D47 /* Deck.swift in Sources */,
+				C378BA9D2A5655B900479D47 /* AnimalType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
