@@ -18,8 +18,6 @@ import Foundation
  */
 
 enum AnimalType: String, Typeable {
-    typealias ValueType = String
-    
     case dog = "🐶", cat = "🐱", cow = "🐮"
     
     var value: String { self.rawValue }
