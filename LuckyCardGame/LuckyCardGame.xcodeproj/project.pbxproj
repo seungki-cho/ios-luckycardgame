@@ -23,6 +23,7 @@
 		C378BA9F2A5655BF00479D47 /* NumberType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C378BA9E2A5655BF00479D47 /* NumberType.swift */; };
 		C378BAA12A5655DF00479D47 /* LuckyCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C378BAA02A5655DF00479D47 /* LuckyCard.swift */; };
 		C378BAA32A56560400479D47 /* LuckyDeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = C378BAA22A56560400479D47 /* LuckyDeck.swift */; };
+		C378BAA52A5697E700479D47 /* LuckyGameRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = C378BAA42A5697E700479D47 /* LuckyGameRule.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		C378BA9E2A5655BF00479D47 /* NumberType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberType.swift; sourceTree = "<group>"; };
 		C378BAA02A5655DF00479D47 /* LuckyCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuckyCard.swift; sourceTree = "<group>"; };
 		C378BAA22A56560400479D47 /* LuckyDeck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuckyDeck.swift; sourceTree = "<group>"; };
+		C378BAA42A5697E700479D47 /* LuckyGameRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuckyGameRule.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +167,7 @@
 				C378BA9E2A5655BF00479D47 /* NumberType.swift */,
 				C378BAA02A5655DF00479D47 /* LuckyCard.swift */,
 				C378BAA22A56560400479D47 /* LuckyDeck.swift */,
+				C378BAA42A5697E700479D47 /* LuckyGameRule.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C378BAA52A5697E700479D47 /* LuckyGameRule.swift in Sources */,
 				C378BA822A540E7F00479D47 /* PaddingLabel.swift in Sources */,
 				C378BA4D2A53C29200479D47 /* ViewController.swift in Sources */,
 				C378BAA12A5655DF00479D47 /* LuckyCard.swift in Sources */,
