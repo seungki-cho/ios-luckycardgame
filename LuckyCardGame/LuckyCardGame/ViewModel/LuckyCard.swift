@@ -15,8 +15,8 @@ import Foundation
  외부에서 상황에 따라 타입을 정할 수 있도록 했습니다.
  */
 
-struct LuckyCard<FirstType: Typeable, SecondType: Typeable> {
-    var (firstType, secondType): (FirstType, SecondType)
+struct LuckyCard {
+    var (animalType, numberType): (AnimalType, NumberType)
 
-    var description: String { firstType.description + secondType.description }
+    var description: String { animalType.description + numberType.description }
 }
