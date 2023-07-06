@@ -12,42 +12,49 @@ fileprivate enum Constant {
     static let headerHeight = 44.0
     static let xMargin = 20.0
     static let yMargin = 10.0
+    static let cornerRadius = 10.0
     
     static var deckHeight = UIScreen.main.bounds.height / CGFloat(deckCount + 4)
 }
 
 final class ViewController: UIViewController {
+    //MARK: - UI
     lazy var headerView: UIView = {
         let view = UIView()
         view.backgroundColor = .yellow
-        view.layer.cornerRadius = 10
+        view.layer.cornerRadius = Constant.cornerRadius
         return view
     }()
     lazy var footerView: UIView = {
         let view = UIView()
         view.backgroundColor = .gray
-        view.layer.cornerRadius = 10
+        view.layer.cornerRadius = Constant.cornerRadius
         return view
     }()
     lazy var deckStackView: DeckStackView = {
         let view = DeckStackView()
-        view.layer.cornerRadius = 10
-        view.spacing = 10
+        view.layer.cornerRadius = Constant.cornerRadius
+        view.spacing = Constant.yMargin
         view.deckHeight = Constant.deckHeight
         return view
     }()
     
+    //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         configureUI()
+        
+        let deck = Deck<AnimalType, NumberType>()
+        print(deck.description)
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewSafeAreaInsetsDidChange() {
+        super.viewSafeAreaInsetsDidChange()
         configureFrame()
     }
     
+    //MARK: - Helper
     private func configureUI() {
         [headerView, deckStackView, footerView].forEach {
             view.addSubview($0)
