@@ -16,8 +16,4 @@ import Foundation
  associatedtype 지정 -> Animal과 숫자 대신 다른 타입도 사용할 수 있도록 했습니다.
 */
 
-protocol Typeable: CaseIterable, CustomStringConvertible {
-    associatedtype ValueType
-    
-    var value: ValueType { get }
-}
+protocol Typeable: CaseIterable, CustomStringConvertible { }
