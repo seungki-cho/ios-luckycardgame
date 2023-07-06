@@ -44,6 +44,9 @@ final class ViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         configureUI()
+        
+        let deck = Deck<AnimalType, NumberType>()
+        print(deck.description)
     }
     
     override func viewSafeAreaInsetsDidChange() {
