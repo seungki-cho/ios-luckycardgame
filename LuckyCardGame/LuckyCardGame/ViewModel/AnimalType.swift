@@ -20,7 +20,6 @@ import Foundation
 enum AnimalType: String, Typeable {
     case dog = "🐶", cat = "🐱", cow = "🐮"
     
-    var value: String { self.rawValue }
     var description: String { self.rawValue }
 }
 
