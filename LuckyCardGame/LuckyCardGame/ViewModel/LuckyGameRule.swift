@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum LuckyGameRule: Int {
+enum LuckyGameRule {
     case threePlayer, fourPlayer, fivePlayer
     
     var playerCount: Int {
