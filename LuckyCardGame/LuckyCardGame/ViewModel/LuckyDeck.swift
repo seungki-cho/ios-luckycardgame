@@ -18,11 +18,25 @@ final class LuckyDeck: CustomStringConvertible {
     
     var description: String { deck.map { $0.description }.joined(separator: ", ") }
     
-    func discardCard(animals removalAnimal: [AnimalType] = [], numbers removalNumber: [NumberType] = []) {
+    func discardCard(animals removalAnimal: [AnimalType] = [],
+                     numbers removalNumber: [NumberType] = []
+    ) {
         deck.removeAll { removalAnimal.contains($0.animalType) || removalNumber.contains($0.numberType) }
     }
     
     func drawCard() -> LuckyCard {
         deck.removeLast()
+    }
+    
+    func appendCard(_ card: LuckyCard) {
+        deck.append(card)
+    }
+    
+    func appendCards(_ cards: [LuckyCard]) {
+        deck.append(contentsOf: cards)
+    }
+    
+    func removeCards(where shouldBeRemoved: (LuckyCard) -> Bool) {
+        deck.removeAll { shouldBeRemoved($0) }
     }
 }
