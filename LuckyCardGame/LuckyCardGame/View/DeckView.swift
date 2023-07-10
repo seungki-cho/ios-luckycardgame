@@ -8,7 +8,7 @@
 import UIKit
 
 fileprivate enum Constant {
-    static let widthToHeightRatio = 0.60
+    static let widthToHeightRatio = 0.54
     static let xMargin = 5.0
     static let yMargin = 5.0
 }
