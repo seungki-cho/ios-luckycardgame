@@ -22,7 +22,7 @@ final class DeckView: UIView {
         return label
     }()
     let cardViews: [CardView] = {
-        let cardViews = (0..<8).map{ _ in CardView() }
+        let cardViews = (0..<9).map{ _ in CardView() }
         cardViews.forEach { cardView in
             cardView.isHidden = true;
             cardView.backgroundColor = .white;
