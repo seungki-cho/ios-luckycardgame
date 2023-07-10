@@ -39,10 +39,12 @@ final class DeckStackView: UIView {
             deckView.isHidden = false
             deckView.changeCards(deck)
         }
+        deckCount = luckyDecks.count
         configureFrame()
     }
     
     func configureFrame() {
+        let deckHeight = (bounds.height - CGFloat(deckCount) * spacing) / CGFloat(deckCount)
         deckViews.enumerated().forEach { offset, deckView in
             deckView.frame = CGRect(x: 0,
                                     y: CGFloat(offset) * (spacing + deckHeight),
