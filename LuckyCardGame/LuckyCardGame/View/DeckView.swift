@@ -30,6 +30,13 @@ final class DeckView: UIView {
         }
         return cardViews
     }()
+    
+    //MARK: - Property
+    private var cardCount = 8 {
+        didSet {
+            configureFrame()
+        }
+    }
     private let alphabet: String
     
     //MARK: - LifeCycle
@@ -78,5 +85,14 @@ final class DeckView: UIView {
                                         height: frame.height - Constant.yMargin * 2)
         }
     }
+    
+    func changeCards(_ cards: [LuckyCard]) {
+        cardCount = cards.count
+        cardViews.forEach { $0.isHidden = true }
+        zip(cards, cardViews).forEach { (card: LuckyCard, cardView: CardView) in
+            cardView.isHidden = false
+            cardView.change(number: card.numberType.description,
+                            animal: card.animalType.description)
+        }
     }
 }
