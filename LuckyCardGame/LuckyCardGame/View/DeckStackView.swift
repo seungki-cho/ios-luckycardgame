@@ -16,17 +16,9 @@ final class DeckStackView: UIView {
     
     
     //MARK: - Property
-    var spacing: CGFloat = 0.0 {
-        didSet {
-            configureFrame()
-        }
-    }
-    var deckHeight: CGFloat = 0.0 {
-        didSet {
-            configureFrame()
-        }
-    }
-    
+    private var deckCount = 3
+    var spacing: CGFloat = 0.0
+
     //MARK: - LifeCycle
     init() {
         super.init(frame: .zero)
