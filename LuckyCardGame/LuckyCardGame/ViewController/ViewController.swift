@@ -41,11 +41,7 @@ final class ViewController: UIViewController {
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
         configureUI()
-        
-        let deck = LuckyDeck()
-        print(deck.description)
     }
     
     override func viewSafeAreaInsetsDidChange() {
@@ -55,6 +51,7 @@ final class ViewController: UIViewController {
     
     //MARK: - Helper
     private func configureUI() {
+        view.backgroundColor = .white
         [headerView, deckStackView, footerView].forEach {
             view.addSubview($0)
         }
