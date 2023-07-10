@@ -13,8 +13,9 @@ fileprivate enum Constant {
     static let yMargin = 5.0
 }
 final class DeckView: UIView {
-    lazy var alphabetLabel: PaddingLabel = {
-        let label = PaddingLabel(padding: UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0))
+    //MARK: - UI Property
+    let alphabetLabel: PaddingLabel = {
+        let label = PaddingLabel(frame: .zero, padding: UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0))
         label.textColor = .gray
         label.alpha = 0.5
         return label
