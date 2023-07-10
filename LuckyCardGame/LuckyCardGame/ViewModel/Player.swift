@@ -8,9 +8,9 @@
 import Foundation
 
 struct Player {
-    private var hand: [LuckyCard] = []
+    private var hand: LuckyDeck = LuckyDeck()
     
     mutating func getCards(cards: [LuckyCard]) {
-        hand.append(contentsOf: cards)
+        hand.appendCards(cards)
     }
 }
