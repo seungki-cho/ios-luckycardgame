@@ -6,3 +6,7 @@
 //
 
 import UIKit
+
+extension UIImage {
+    static let LogoImage = UIImage(named: "LogoImage")
+}
