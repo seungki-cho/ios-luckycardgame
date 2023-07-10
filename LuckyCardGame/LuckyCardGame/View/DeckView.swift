@@ -20,13 +20,23 @@ final class DeckView: UIView {
         label.alpha = 0.5
         return label
     }()
+    private let alphabet: String
     
-    override init(frame: CGRect) {
+    //MARK: - LifeCycle
+    init(_ alphabet: String) {
+        self.alphabet = alphabet
+        super.init(frame: .zero)
+        configureUI()
+    }
+    
+    private override init(frame: CGRect) {
+        alphabet = "A"
         super.init(frame: frame)
         configureUI()
     }
 
     required init?(coder: NSCoder) {
+        alphabet = "A"
         super.init(coder: coder)
         configureUI()
     }
@@ -36,9 +46,10 @@ final class DeckView: UIView {
         backgroundColor = .systemGray5
         
         addSubview(alphabetLabel)
+        alphabetLabel.text = alphabet
     }
     
-    func configureFrame(_ alphabet: String) {
+    func configureFrame() {
         alphabetLabel.frame = CGRect(x: 10.0,
                                      y: frame.height / 4.0,
                                      width: frame.width,
