@@ -12,6 +12,7 @@ fileprivate enum Constant {
     static let xMargin = 5.0
     static let yMargin = 5.0
 }
+
 final class DeckView: UIView {
     //MARK: - UI Property
     let alphabetLabel: PaddingLabel = {
@@ -19,6 +20,15 @@ final class DeckView: UIView {
         label.textColor = .gray
         label.alpha = 0.5
         return label
+    }()
+    let cardViews: [CardView] = {
+        let cardViews = (0..<8).map{ _ in CardView() }
+        cardViews.forEach { cardView in
+            cardView.isHidden = true;
+            cardView.backgroundColor = .white;
+            cardView.layer.cornerRadius = 15
+        }
+        return cardViews
     }()
     private let alphabet: String
     
@@ -46,6 +56,8 @@ final class DeckView: UIView {
         backgroundColor = .systemGray5
         
         addSubview(alphabetLabel)
+        cardViews.forEach { addSubview($0) }
+        
         alphabetLabel.text = alphabet
     }
     
@@ -54,7 +66,17 @@ final class DeckView: UIView {
                                      y: frame.height / 4.0,
                                      width: frame.width,
                                      height: frame.height / 2.0)
-        alphabetLabel.font = .init(name: "AvenirNext-BoldItalic", size: frame.height/2)
-        alphabetLabel.text = alphabet
+        alphabetLabel.font = UIFont(name: "AvenirNext-BoldItalic", size: frame.height / 2)
+        
+        let cardWidth = frame.height * Constant.widthToHeightRatio
+        let cardSpacing = (frame.width - Constant.xMargin * 2 - cardWidth * Double(cardCount)) / Double(cardCount-1)
+        
+        for i in 0..<cardCount {
+            cardViews[i].frame = CGRect(x: Constant.xMargin + Double(i) * (cardSpacing + cardWidth),
+                                        y: Constant.yMargin,
+                                        width: cardWidth,
+                                        height: frame.height - Constant.yMargin * 2)
+        }
+    }
     }
 }
