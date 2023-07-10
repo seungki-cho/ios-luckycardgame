@@ -8,13 +8,10 @@
 import UIKit
 
 fileprivate enum Constant {
-    static var deckCount = 5
     static let headerHeight = 44.0
     static let xMargin = 20.0
     static let yMargin = 10.0
     static let cornerRadius = 10.0
-    
-    static var deckHeight = UIScreen.main.bounds.height / CGFloat(deckCount + 4)
 }
 
 final class ViewController: UIViewController {
@@ -36,7 +33,6 @@ final class ViewController: UIViewController {
         let view = DeckStackView()
         view.layer.cornerRadius = Constant.cornerRadius
         view.spacing = Constant.yMargin
-        view.deckHeight = Constant.deckHeight
         return view
     }()
     
@@ -71,16 +67,12 @@ final class ViewController: UIViewController {
                                   width: safeRect.width - Constant.xMargin * 2,
                                   height: Constant.headerHeight)
         
-        let deckStackViewHeight = Constant.deckHeight * CGFloat(Constant.deckCount) +
-                                  Constant.yMargin * CGFloat(Constant.deckCount-1)
         deckStackView.frame = CGRect(x: safeRect.minX + Constant.xMargin,
                                      y: headerView.frame.maxY + Constant.yMargin,
                                      width: safeRect.width - Constant.xMargin * 2,
                                      height: deckStackViewHeight)
         
-        let footerViewHeight = safeRect.maxY - (Constant.yMargin + deckStackView.frame.maxY)
         footerView.frame = CGRect(x: safeRect.minX + Constant.xMargin,
-                                  y: deckStackView.frame.maxY + Constant.yMargin,
                                   width: safeRect.width - Constant.xMargin * 2,
                                   height: footerViewHeight - Constant.yMargin)
         
