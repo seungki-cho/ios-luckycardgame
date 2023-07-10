@@ -32,11 +32,7 @@ final class DeckView: UIView {
     }()
     
     //MARK: - Property
-    private var cardCount = 8 {
-        didSet {
-            configureFrame()
-        }
-    }
+    private var cardCount = 8
     private let alphabet: String
     
     //MARK: - LifeCycle
