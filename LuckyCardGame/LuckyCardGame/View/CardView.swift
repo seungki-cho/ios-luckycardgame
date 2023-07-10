@@ -67,4 +67,10 @@ class CardView: UIView {
                                          width: bounds.width / 3,
                                          height: bounds.height / 4)
     }
+    
+    func change(number: String, animal: String) {
+        let number = String(Int(number) ?? 1)
+        (topNumberLabel.text, bottomNumberLabel.text) = (number, number)
+        animalLabel.text = animal
+    }
 }
