@@ -55,7 +55,12 @@ final class ViewController: UIViewController {
         [headerView, deckStackView, footerView].forEach {
             view.addSubview($0)
         }
-        (0..<Constant.deckCount).forEach { _ in deckStackView.append() }
+        
+        var da = [[LuckyCard]]()
+        for i in 0..<3 {
+            da.append(Array(repeating: .init(animalType: .cat, numberType: .eight), count: 6))
+        }
+        deckStackView.changeDecks(luckyDecks: da)
     }
     
     private func configureFrame() {
@@ -86,6 +91,14 @@ final class ViewController: UIViewController {
     }
     
     @objc private func didChangeCount(segement: UISegmentedControl) {
-        
+        deckCount = segement.selectedSegmentIndex + 3
+        configureFrame()
+
+        var da = [[LuckyCard]]()
+
+        for _ in 0..<deckCount {
+            da.append(Array(repeating: .init(animalType: .cat, numberType: .eight), count: [9,8,6][segement.selectedSegmentIndex]))
+        }
+        deckStackView.changeDecks(luckyDecks: da)
     }
 }
