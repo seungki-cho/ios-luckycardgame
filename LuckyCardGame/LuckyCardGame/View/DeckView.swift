@@ -58,6 +58,12 @@ final class DeckView: UIView {
         configureUI()
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        configureFrame()
+    }
+    
+    //MARK: - Helper
     private func configureUI() {
         layer.cornerRadius = 10
         backgroundColor = .systemGray5
