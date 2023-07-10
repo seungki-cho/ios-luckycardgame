@@ -7,6 +7,11 @@
 
 import UIKit
 
+fileprivate enum Constant {
+    static let widthToHeightRatio = 0.60
+    static let xMargin = 5.0
+    static let yMargin = 5.0
+}
 final class DeckView: UIView {
     lazy var alphabetLabel: PaddingLabel = {
         let label = PaddingLabel(padding: UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0))
