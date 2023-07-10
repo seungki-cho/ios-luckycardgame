@@ -19,10 +19,11 @@ fileprivate enum Constant {
 
 final class ViewController: UIViewController {
     //MARK: - UI
-    lazy var headerView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .yellow
+    lazy var headerView: UISegmentedControl = {
+        let view = UISegmentedControl(items: ["3명", "4명", "5명"])
+        view.selectedSegmentIndex = 0
         view.layer.cornerRadius = Constant.cornerRadius
+        view.addTarget(self, action: #selector(didChangeCount(segement: )), for: .valueChanged)
         return view
     }()
     lazy var footerView: UIView = {
@@ -84,5 +85,9 @@ final class ViewController: UIViewController {
                                   height: footerViewHeight - Constant.yMargin)
         
         deckStackView.configureFrame()
+    }
+    
+    @objc private func didChangeCount(segement: UISegmentedControl) {
+        
     }
 }
