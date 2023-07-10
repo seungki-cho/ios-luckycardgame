@@ -8,8 +8,14 @@
 import UIKit
 
 final class DeckStackView: UIView {
-    var subDecks: [DeckView] = []
+    //MARK: - UI Property
+    private lazy var deckViews: [DeckView] = {
+        let subDeckViews = ["A", "B", "C", "D", "E"].map { DeckView($0) }
+        return subDeckViews
+    }()
     
+    
+    //MARK: - Property
     var spacing: CGFloat = 0.0 {
         didSet {
             configureFrame()
@@ -21,25 +27,36 @@ final class DeckStackView: UIView {
         }
     }
     
-    func append() {
-        let deck = DeckView()
-        subDecks.append(deck)
-        addSubview(deck)
+    //MARK: - LifeCycle
+    init() {
+        super.init(frame: .zero)
+        deckViews.forEach { addSubview($0) }
         configureFrame()
     }
     
-    func removeLast() {
-        subDecks.removeLast()
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        deckViews.forEach { addSubview($0) }
+        configureFrame()
+    }
+    
+    //MARK: - Helper
+    func changeDecks(luckyDecks: [[LuckyCard]]) {
+        deckViews.forEach { $0.isHidden = true }
+        zip(luckyDecks, deckViews).forEach { deck, deckView in
+            deckView.isHidden = false
+            deckView.changeCards(deck)
+        }
         configureFrame()
     }
     
     func configureFrame() {
-        subDecks.enumerated().forEach { offset, deckView in
+        deckViews.enumerated().forEach { offset, deckView in
             deckView.frame = CGRect(x: 0,
                                     y: CGFloat(offset) * (spacing + deckHeight),
                                     width: frame.width,
                                     height: deckHeight)
-            deckView.configureFrame(String(UnicodeScalar(65 + offset) ?? "A"))
+            deckView.configureFrame()
         }
     }
 }
