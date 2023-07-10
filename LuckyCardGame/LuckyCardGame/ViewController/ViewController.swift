@@ -35,6 +35,8 @@ final class ViewController: UIViewController {
         view.spacing = Constant.yMargin
         return view
     }()
+    //MARK: - Property
+    private var deckCount = 3
     
     //MARK: - LifeCycle
     override func viewDidLoad() {
@@ -61,18 +63,25 @@ final class ViewController: UIViewController {
     
     private func configureFrame() {
         let safeRect = view.safeAreaLayoutGuide.layoutFrame
+        let deckHeight = (safeRect.height - Constant.headerHeight - Constant.yMargin * 6) / 6
         
         headerView.frame = CGRect(x: safeRect.minX + Constant.xMargin,
                                   y: safeRect.minY + Constant.yMargin,
                                   width: safeRect.width - Constant.xMargin * 2,
                                   height: Constant.headerHeight)
         
+        let deckStackViewHeight = deckHeight * CGFloat(deckCount) +
+                                  Constant.yMargin * CGFloat(deckCount-1)
         deckStackView.frame = CGRect(x: safeRect.minX + Constant.xMargin,
                                      y: headerView.frame.maxY + Constant.yMargin,
                                      width: safeRect.width - Constant.xMargin * 2,
                                      height: deckStackViewHeight)
         
+        let largeFooterHeight = deckHeight * 2 + Constant.yMargin
+        let smallFooterHeight = deckHeight
+        let footerViewHeight = deckCount > 4 ? smallFooterHeight : largeFooterHeight
         footerView.frame = CGRect(x: safeRect.minX + Constant.xMargin,
+                                  y: safeRect.maxY - footerViewHeight,
                                   width: safeRect.width - Constant.xMargin * 2,
                                   height: footerViewHeight - Constant.yMargin)
         
