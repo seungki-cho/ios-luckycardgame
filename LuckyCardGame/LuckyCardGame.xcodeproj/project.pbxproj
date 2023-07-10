@@ -27,6 +27,7 @@
 		C378BAA72A569CDD00479D47 /* LuckyGameService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C378BAA62A569CDD00479D47 /* LuckyGameService.swift */; };
 		C378BAA92A569CED00479D47 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = C378BAA82A569CED00479D47 /* Player.swift */; };
 		C378BAAB2A56B98300479D47 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C378BAAA2A56B98300479D47 /* CardView.swift */; };
+		C378BAB02A5C0CC800479D47 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C378BAAF2A5C0CC800479D47 /* UIImage+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		C378BAA62A569CDD00479D47 /* LuckyGameService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuckyGameService.swift; sourceTree = "<group>"; };
 		C378BAA82A569CED00479D47 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		C378BAAA2A56B98300479D47 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		C378BAAF2A5C0CC800479D47 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 				C378BA7B2A540CDC00479D47 /* ViewModel */,
 				C378BA7A2A540CCC00479D47 /* ViewController */,
 				C378BA792A540CBE00479D47 /* View */,
+				C378BAAE2A5C0CB600479D47 /* Util */,
 			);
 			path = LuckyCardGame;
 			sourceTree = "<group>";
@@ -190,6 +193,14 @@
 				C378BA4A2A53C29200479D47 /* SceneDelegate.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		C378BAAE2A5C0CB600479D47 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				C378BAAF2A5C0CC800479D47 /* UIImage+.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -327,6 +338,7 @@
 				C378BA4D2A53C29200479D47 /* ViewController.swift in Sources */,
 				C378BAA12A5655DF00479D47 /* LuckyCard.swift in Sources */,
 				C378BAAB2A56B98300479D47 /* CardView.swift in Sources */,
+				C378BAB02A5C0CC800479D47 /* UIImage+.swift in Sources */,
 				C378BAA92A569CED00479D47 /* Player.swift in Sources */,
 				C378BA492A53C29200479D47 /* AppDelegate.swift in Sources */,
 				C378BA4B2A53C29200479D47 /* SceneDelegate.swift in Sources */,
