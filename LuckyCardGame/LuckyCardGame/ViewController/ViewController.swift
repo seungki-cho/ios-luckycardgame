@@ -10,7 +10,7 @@ import UIKit
 fileprivate enum Constant {
     static let headerHeight = 44.0
     static let xMargin = 20.0
-    static let yMargin = 10.0
+    static let yMargin = 20.0
     static let cornerRadius = 10.0
 }
 
@@ -64,7 +64,7 @@ final class ViewController: UIViewController {
     
     private func configureFrame() {
         let safeRect = view.safeAreaLayoutGuide.layoutFrame
-        let deckHeight = (safeRect.height - Constant.headerHeight - Constant.yMargin * 6) / 6
+        let deckHeight = (safeRect.height - Constant.headerHeight - Constant.yMargin * 7) / 6
         
         headerView.frame = CGRect(x: safeRect.minX + Constant.xMargin,
                                   y: safeRect.minY + Constant.yMargin,
@@ -82,9 +82,9 @@ final class ViewController: UIViewController {
         let smallFooterHeight = deckHeight
         let footerViewHeight = deckCount > 4 ? smallFooterHeight : largeFooterHeight
         footerView.frame = CGRect(x: safeRect.minX + Constant.xMargin,
-                                  y: safeRect.maxY - footerViewHeight,
+                                  y: safeRect.maxY - footerViewHeight - Constant.yMargin,
                                   width: safeRect.width - Constant.xMargin * 2,
-                                  height: footerViewHeight - Constant.yMargin)
+                                  height: footerViewHeight)
         
         deckStackView.configureFrame()
     }
