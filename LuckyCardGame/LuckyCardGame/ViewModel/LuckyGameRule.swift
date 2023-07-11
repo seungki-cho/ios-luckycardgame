@@ -7,17 +7,17 @@
 
 import Foundation
 
-enum LuckyGameRule {
+enum LuckyGameRule: Int {
     case threePlayer, fourPlayer, fivePlayer
     
-    var playerCount: Int {
+    var supportingPlayerCount: Int {
         switch self {
         case .threePlayer:
-            return 3
+            return 2
         case .fourPlayer:
-            return 4
+            return 3
         case .fivePlayer:
-            return 5
+            return 4
         }
     }
     
@@ -44,11 +44,11 @@ enum LuckyGameRule {
     var floorCardCount: Int {
         switch self {
         case .threePlayer:
-            return 8
-        case .fourPlayer:
             return 9
+        case .fourPlayer:
+            return 8
         case .fivePlayer:
-            return 10
+            return 6
         }
     }
 }
