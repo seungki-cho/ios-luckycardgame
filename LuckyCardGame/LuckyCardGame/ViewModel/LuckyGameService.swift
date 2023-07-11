@@ -7,7 +7,7 @@
 
 import Foundation
 
-class LuckyGameService {
+final class LuckyGameService {
     private var rule: LuckyGameRule
     private var deck: LuckyDeck = .init()
     
