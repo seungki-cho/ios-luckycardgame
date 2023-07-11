@@ -13,4 +13,8 @@ struct Player {
     mutating func getCards(cards: [LuckyCard]) {
         hand.appendCards(cards)
     }
+    
+    func showCards() -> [LuckyCard] {
+        hand.showCards()
+    }
 }
