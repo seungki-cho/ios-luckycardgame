@@ -11,18 +11,19 @@ class CardView: UIView {
     //MARK: - UI Property
     private let topNumberLabel = {
         let label = UILabel()
-        label.font = .init(name: "Verdana", size: 13)
+        label.font = .init(name: "Verdana", size: 100)
         label.adjustsFontSizeToFitWidth = true
         return label
     }()
     private let animalLabel = {
         let label = UILabel()
+        label.font = .systemFont(ofSize: 100)
         label.adjustsFontSizeToFitWidth = true
         return label
     }()
     private let bottomNumberLabel = {
         let label = UILabel()
-        label.font = .init(name: "Verdana", size: 13)
+        label.font = .init(name: "Verdana", size: 100)
         label.adjustsFontSizeToFitWidth = true
         return label
     }()
@@ -52,20 +53,22 @@ class CardView: UIView {
     }
     
     private func configureFrame() {
-        topNumberLabel.frame = CGRect(x: bounds.width / 10,
-                                      y: bounds.height / 13,
+        topNumberLabel.frame = CGRect(x: bounds.width / 12,
+                                      y: bounds.height / 12,
                                       width: bounds.width / 3,
                                       height: bounds.height / 4)
         
-        animalLabel.frame = CGRect(x: bounds.maxX / 2 - bounds.width / 6,
-                                   y: bounds.maxY / 2 - bounds.height / 6,
-                                   width: bounds.width / 3,
-                                   height: bounds.height / 4)
+        animalLabel.frame = CGRect(x: bounds.maxX / 2 - bounds.width / 4,
+                                   y: bounds.maxY / 2 - bounds.height / 4,
+                                   width: bounds.width / 2,
+                                   height: bounds.height / 2)
+        
 
-        bottomNumberLabel.frame = CGRect(x: bounds.maxX - bounds.width / 4,
+        bottomNumberLabel.frame = CGRect(x: bounds.maxX - bounds.width / 3,
                                          y: bounds.maxY - bounds.height / 3,
                                          width: bounds.width / 3,
                                          height: bounds.height / 4)
+        
     }
     
     func change(number: String, animal: String) {
