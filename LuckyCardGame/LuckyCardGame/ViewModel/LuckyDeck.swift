@@ -8,13 +8,7 @@
 import Foundation
 
 final class LuckyDeck: CustomStringConvertible {
-    private var deck: [LuckyCard]
-    
-    init() {
-        deck = AnimalType.allCases.flatMap { animal in
-            NumberType.allCases.map { LuckyCard(animalType: animal, numberType: $0)}
-        }.shuffled()
-    }
+    private var deck: [LuckyCard] = []
     
     var description: String { deck.map { $0.description }.joined(separator: ", ") }
     
