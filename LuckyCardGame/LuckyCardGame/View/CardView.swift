@@ -27,6 +27,19 @@ class CardView: UIView {
         label.adjustsFontSizeToFitWidth = true
         return label
     }()
+    private let backImageView = {
+        let imageView = UIImageView(image: UIImage.LogoImage)
+        imageView.isHidden = true
+        imageView.contentMode = .scaleAspectFit
+        return imageView
+    }()
+    //MARK: - Property
+    var isFlipped = false {
+        willSet {
+            backImageView.isHidden = newValue
+            [topNumberLabel, animalLabel, bottomNumberLabel].forEach { $0.isHidden = !newValue }
+        }
+    }
     
     //MARK: - LifeCycle
     override init(frame: CGRect) {
@@ -44,10 +57,11 @@ class CardView: UIView {
         configureFrame()
     }
     
+    
     //MARK: - Helper
     private func configureUI() {
         layer.borderWidth = 1.0
-        [topNumberLabel, animalLabel, bottomNumberLabel].forEach {
+        [topNumberLabel, animalLabel, bottomNumberLabel, backImageView].forEach {
             addSubview($0)
         }
     }
@@ -63,6 +77,10 @@ class CardView: UIView {
                                    width: bounds.width / 2,
                                    height: bounds.height / 2)
         
+        backImageView.frame = CGRect(x: bounds.maxX / 2 - (bounds.width / 4),
+                                     y: bounds.maxY / 2 - (bounds.height / 4),
+                                     width: bounds.width / 2,
+                                     height: bounds.height / 2)
 
         bottomNumberLabel.frame = CGRect(x: bounds.maxX - bounds.width / 3,
                                          y: bounds.maxY - bounds.height / 3,
