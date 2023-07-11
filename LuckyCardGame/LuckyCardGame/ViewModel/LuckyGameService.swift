@@ -45,5 +45,8 @@ class LuckyGameService {
         
         dealCard()
     }
+    
+    func getCardArray() -> [[LuckyCard]] {
+        [mainPlayer.showCards()] + players.map { $0.showCards() } + [floor.showCards()]
     }
 }
