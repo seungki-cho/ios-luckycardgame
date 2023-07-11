@@ -17,14 +17,33 @@ class LuckyGameService {
     
     init(rule: LuckyGameRule) {
         self.rule = rule
-        self.deck = .init()
-        self.players = Array(repeating: Player(), count: rule.playerCount)
     }
     
-    mutating func dealCard() {
+    private func dealCard() {
         deck.discardCard(numbers: rule.removalNumbers)
-        (0..<rule.playerCount).forEach { index in
-            players[index].getCards(cards: (0..<rule.playerCardCount).map{ _ in deck.drawCard() })
+        deck.appendCards( AnimalType.allCases.flatMap { animal in
+            NumberType.allCases.map { LuckyCard(animalType: animal, numberType: $0)}
+        }.shuffled())
+        
+        mainPlayer.getCards(cards: (0..<rule.playerCardCount).map { _ in
+            var card = deck.drawCard()
+            card.isFlipped = true
+            return card
+        })
+        (0..<rule.supportingPlayerCount).forEach { index in
+            players[index].getCards(cards: (0..<rule.playerCardCount).map { _ in deck.drawCard() })
         }
+        floor.getCards(cards: (0..<rule.floorCardCount).map { _ in deck.drawCard()} )
+    }
+    
+    func changeRule(_ newRule: LuckyGameRule) {
+        rule = newRule
+        deck = .init()
+        mainPlayer = .init()
+        players = (0..<rule.supportingPlayerCount).map { _ in Player() }
+        floor = .init()
+        
+        dealCard()
+    }
     }
 }
