@@ -23,7 +23,7 @@ final class ViewController: UIViewController {
         view.addTarget(self, action: #selector(didChangeCount(segement: )), for: .valueChanged)
         return view
     }()
-    lazy var footerView: FloorDeckView = {
+    lazy var floorDeckView: FloorDeckView = {
         let view = FloorDeckView(frame: .zero)
         view.layer.cornerRadius = Constant.cornerRadius
         return view
@@ -53,7 +53,7 @@ final class ViewController: UIViewController {
     //MARK: - Helper
     private func configureUI() {
         view.backgroundColor = .white
-        [headerView, deckStackView, footerView].forEach {
+        [headerView, deckStackView, floorDeckView].forEach {
             view.addSubview($0)
         }
     }
@@ -76,11 +76,11 @@ final class ViewController: UIViewController {
         
         let largeFooterHeight = deckHeight * 2 + Constant.yMargin
         let smallFooterHeight = deckHeight
-        let footerViewHeight = deckCount > 4 ? smallFooterHeight : largeFooterHeight
-        footerView.frame = CGRect(x: safeRect.minX + Constant.xMargin,
-                                  y: safeRect.maxY - footerViewHeight - Constant.yMargin,
+        let floorView`Height = deckCount > 4 ? smallFooterHeight : largeFooterHeight
+        floorDeckView.frame = CGRect(x: safeRect.minX + Constant.xMargin,
+                                  y: safeRect.maxY - floorViewHeight - Constant.yMargin,
                                   width: safeRect.width - Constant.xMargin * 2,
-                                  height: footerViewHeight)
+                                  height: floorViewHeight)
         
         deckStackView.configureFrame()
     }
@@ -103,7 +103,7 @@ final class ViewController: UIViewController {
         
         
         var cards = luckyGameService.getCardArray()
-        footerView.changeCards(cards.removeLast())
+        floorDeckView.changeCards(cards.removeLast())
         deckStackView.changeDecks(luckyDecks: cards)
         
         configureFrame()
