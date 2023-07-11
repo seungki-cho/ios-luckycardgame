@@ -36,11 +36,13 @@ final class ViewController: UIViewController {
     }()
     //MARK: - Property
     private var deckCount = 3
+    private let luckyGameService = LuckyGameService(rule: .threePlayer)
     
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        setupDeck(headerView.selectedSegmentIndex)
     }
     
     override func viewSafeAreaInsetsDidChange() {
@@ -84,6 +86,26 @@ final class ViewController: UIViewController {
     }
     
     @objc private func didChangeCount(segement: UISegmentedControl) {
+        setupDeck(segement.selectedSegmentIndex)
+    }
+    
+    private func setupDeck(_ selectedIndex: Int) {
+        deckCount = selectedIndex + 3
+        
+        switch selectedIndex {
+        case 0:
+            luckyGameService.changeRule(.threePlayer)
+        case 1:
+            luckyGameService.changeRule(.fourPlayer)
+        default:
+            luckyGameService.changeRule(.fivePlayer)
         }
+        
+        
+        var cards = luckyGameService.getCardArray()
+        footerView.changeCards(cards.removeLast())
+        deckStackView.changeDecks(luckyDecks: cards)
+        
+        configureFrame()
     }
 }
