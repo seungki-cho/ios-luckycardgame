@@ -29,6 +29,7 @@
 		C378BAAB2A56B98300479D47 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C378BAAA2A56B98300479D47 /* CardView.swift */; };
 		C378BAB02A5C0CC800479D47 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C378BAAF2A5C0CC800479D47 /* UIImage+.swift */; };
 		C378BAB22A5C34F500479D47 /* CommonDeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C378BAB12A5C34F500479D47 /* CommonDeckView.swift */; };
+		C378BAB42A5C351100479D47 /* FloorDeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C378BAB32A5C351100479D47 /* FloorDeckView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		C378BAAA2A56B98300479D47 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		C378BAAF2A5C0CC800479D47 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 		C378BAB12A5C34F500479D47 /* CommonDeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonDeckView.swift; sourceTree = "<group>"; };
+		C378BAB32A5C351100479D47 /* FloorDeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloorDeckView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +159,7 @@
 			children = (
 				C378BAB12A5C34F500479D47 /* CommonDeckView.swift */,
 				C378BA7D2A540E3F00479D47 /* DeckView.swift */,
+				C378BAB32A5C351100479D47 /* FloorDeckView.swift */,
 				C378BAAA2A56B98300479D47 /* CardView.swift */,
 				C378BA7F2A540E5B00479D47 /* DeckStackView.swift */,
 				C378BA812A540E7F00479D47 /* PaddingLabel.swift */,
@@ -336,6 +339,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C378BAB42A5C351100479D47 /* FloorDeckView.swift in Sources */,
 				C378BAA52A5697E700479D47 /* LuckyGameRule.swift in Sources */,
 				C378BA822A540E7F00479D47 /* PaddingLabel.swift in Sources */,
 				C378BA4D2A53C29200479D47 /* ViewController.swift in Sources */,
