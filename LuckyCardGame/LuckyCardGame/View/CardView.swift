@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CardView: UIView {
+final class CardView: UIView {
     //MARK: - UI Property
     private let topNumberLabel = {
         let label = UILabel()
