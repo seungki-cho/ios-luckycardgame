@@ -23,9 +23,8 @@ final class ViewController: UIViewController {
         view.addTarget(self, action: #selector(didChangeCount(segement: )), for: .valueChanged)
         return view
     }()
-    lazy var footerView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .gray
+    lazy var footerView: FloorDeckView = {
+        let view = FloorDeckView(frame: .zero)
         view.layer.cornerRadius = Constant.cornerRadius
         return view
     }()
