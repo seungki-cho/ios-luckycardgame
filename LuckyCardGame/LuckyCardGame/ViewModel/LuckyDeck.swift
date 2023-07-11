@@ -22,10 +22,6 @@ final class LuckyDeck: CustomStringConvertible {
         deck.removeLast()
     }
     
-    func appendCard(_ card: LuckyCard) {
-        deck.append(card)
-    }
-    
     func appendCards(_ cards: [LuckyCard]) {
         deck.append(contentsOf: cards)
     }
