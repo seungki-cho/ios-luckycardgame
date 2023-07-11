@@ -28,6 +28,7 @@
 		C378BAA92A569CED00479D47 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = C378BAA82A569CED00479D47 /* Player.swift */; };
 		C378BAAB2A56B98300479D47 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C378BAAA2A56B98300479D47 /* CardView.swift */; };
 		C378BAB02A5C0CC800479D47 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C378BAAF2A5C0CC800479D47 /* UIImage+.swift */; };
+		C378BAB22A5C34F500479D47 /* CommonDeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C378BAB12A5C34F500479D47 /* CommonDeckView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		C378BAA82A569CED00479D47 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		C378BAAA2A56B98300479D47 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		C378BAAF2A5C0CC800479D47 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
+		C378BAB12A5C34F500479D47 /* CommonDeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonDeckView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +155,7 @@
 		C378BA792A540CBE00479D47 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C378BAB12A5C34F500479D47 /* CommonDeckView.swift */,
 				C378BA7D2A540E3F00479D47 /* DeckView.swift */,
 				C378BAAA2A56B98300479D47 /* CardView.swift */,
 				C378BA7F2A540E5B00479D47 /* DeckStackView.swift */,
@@ -339,6 +342,7 @@
 				C378BAA12A5655DF00479D47 /* LuckyCard.swift in Sources */,
 				C378BAAB2A56B98300479D47 /* CardView.swift in Sources */,
 				C378BAB02A5C0CC800479D47 /* UIImage+.swift in Sources */,
+				C378BAB22A5C34F500479D47 /* CommonDeckView.swift in Sources */,
 				C378BAA92A569CED00479D47 /* Player.swift in Sources */,
 				C378BA492A53C29200479D47 /* AppDelegate.swift in Sources */,
 				C378BA4B2A53C29200479D47 /* SceneDelegate.swift in Sources */,
