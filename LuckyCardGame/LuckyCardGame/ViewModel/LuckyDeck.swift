@@ -33,4 +33,8 @@ final class LuckyDeck: CustomStringConvertible {
     func removeCards(where shouldBeRemoved: (LuckyCard) -> Bool) {
         deck.removeAll { shouldBeRemoved($0) }
     }
+    
+    func showCards() -> [LuckyCard] {
+        deck
+    }
 }
