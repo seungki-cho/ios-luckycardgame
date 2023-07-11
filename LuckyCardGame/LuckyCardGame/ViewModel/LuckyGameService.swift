@@ -7,11 +7,13 @@
 
 import Foundation
 
-struct LuckyGameService {
-    private let rule: LuckyGameRule
-    private let deck: LuckyDeck
-    private var players: [Player]
-    private var floor: [LuckyCard] = []
+class LuckyGameService {
+    private var rule: LuckyGameRule
+    private var deck: LuckyDeck = .init()
+    
+    private var mainPlayer: Player = .init()
+    private var players: [Player] = []
+    private var floor: Player = .init()
     
     init(rule: LuckyGameRule) {
         self.rule = rule
