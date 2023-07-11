@@ -8,26 +8,23 @@
 import UIKit
 
 fileprivate enum Constant {
-    static var deckCount = 5
     static let headerHeight = 44.0
     static let xMargin = 20.0
-    static let yMargin = 10.0
+    static let yMargin = 20.0
     static let cornerRadius = 10.0
-    
-    static var deckHeight = UIScreen.main.bounds.height / CGFloat(deckCount + 4)
 }
 
 final class ViewController: UIViewController {
     //MARK: - UI
-    lazy var headerView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .yellow
+    lazy var headerView: UISegmentedControl = {
+        let view = UISegmentedControl(items: ["3명", "4명", "5명"])
+        view.selectedSegmentIndex = 0
         view.layer.cornerRadius = Constant.cornerRadius
+        view.addTarget(self, action: #selector(didChangeCount(segement: )), for: .valueChanged)
         return view
     }()
-    lazy var footerView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .gray
+    lazy var floorDeckView: FloorDeckView = {
+        let view = FloorDeckView(frame: .zero)
         view.layer.cornerRadius = Constant.cornerRadius
         return view
     }()
@@ -35,18 +32,17 @@ final class ViewController: UIViewController {
         let view = DeckStackView()
         view.layer.cornerRadius = Constant.cornerRadius
         view.spacing = Constant.yMargin
-        view.deckHeight = Constant.deckHeight
         return view
     }()
+    //MARK: - Property
+    private var deckCount = 3
+    private let luckyGameService = LuckyGameService(rule: .threePlayer)
     
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
         configureUI()
-        
-        let deck = Deck<AnimalType, NumberType>()
-        print(deck.description)
+        setupDeck(headerView.selectedSegmentIndex)
     }
     
     override func viewSafeAreaInsetsDidChange() {
@@ -56,33 +52,60 @@ final class ViewController: UIViewController {
     
     //MARK: - Helper
     private func configureUI() {
-        [headerView, deckStackView, footerView].forEach {
+        view.backgroundColor = .white
+        [headerView, deckStackView, floorDeckView].forEach {
             view.addSubview($0)
         }
-        (0..<Constant.deckCount).forEach { _ in deckStackView.append() }
     }
     
     private func configureFrame() {
         let safeRect = view.safeAreaLayoutGuide.layoutFrame
+        let deckHeight = (safeRect.height - Constant.headerHeight - Constant.yMargin * 7) / 6
         
         headerView.frame = CGRect(x: safeRect.minX + Constant.xMargin,
                                   y: safeRect.minY + Constant.yMargin,
                                   width: safeRect.width - Constant.xMargin * 2,
                                   height: Constant.headerHeight)
         
-        let deckStackViewHeight = Constant.deckHeight * CGFloat(Constant.deckCount) +
-                                  Constant.yMargin * CGFloat(Constant.deckCount-1)
+        let deckStackViewHeight = deckHeight * CGFloat(deckCount) +
+                                  Constant.yMargin * CGFloat(deckCount-1)
         deckStackView.frame = CGRect(x: safeRect.minX + Constant.xMargin,
                                      y: headerView.frame.maxY + Constant.yMargin,
                                      width: safeRect.width - Constant.xMargin * 2,
                                      height: deckStackViewHeight)
         
-        let footerViewHeight = safeRect.maxY - (Constant.yMargin + deckStackView.frame.maxY)
-        footerView.frame = CGRect(x: safeRect.minX + Constant.xMargin,
-                                  y: deckStackView.frame.maxY + Constant.yMargin,
+        let largeFooterHeight = deckHeight * 2 + Constant.yMargin
+        let smallFooterHeight = deckHeight
+        let floorViewHeight = deckCount > 4 ? smallFooterHeight : largeFooterHeight
+        floorDeckView.frame = CGRect(x: safeRect.minX + Constant.xMargin,
+                                  y: safeRect.maxY - floorViewHeight - Constant.yMargin,
                                   width: safeRect.width - Constant.xMargin * 2,
-                                  height: footerViewHeight - Constant.yMargin)
+                                  height: floorViewHeight)
         
         deckStackView.configureFrame()
+    }
+    
+    @objc private func didChangeCount(segement: UISegmentedControl) {
+        setupDeck(segement.selectedSegmentIndex)
+    }
+    
+    private func setupDeck(_ selectedIndex: Int) {
+        deckCount = selectedIndex + 3
+        
+        switch selectedIndex {
+        case 0:
+            luckyGameService.changeRule(.threePlayer)
+        case 1:
+            luckyGameService.changeRule(.fourPlayer)
+        default:
+            luckyGameService.changeRule(.fivePlayer)
+        }
+        
+        
+        var cards = luckyGameService.getCardArray()
+        floorDeckView.changeCards(cards.removeLast())
+        deckStackView.changeDecks(luckyDecks: cards)
+        
+        configureFrame()
     }
 }
