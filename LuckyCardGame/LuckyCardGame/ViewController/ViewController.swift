@@ -76,7 +76,7 @@ final class ViewController: UIViewController {
         
         let largeFooterHeight = deckHeight * 2 + Constant.yMargin
         let smallFooterHeight = deckHeight
-        let floorView`Height = deckCount > 4 ? smallFooterHeight : largeFooterHeight
+        let floorViewHeight = deckCount > 4 ? smallFooterHeight : largeFooterHeight
         floorDeckView.frame = CGRect(x: safeRect.minX + Constant.xMargin,
                                   y: safeRect.maxY - floorViewHeight - Constant.yMargin,
                                   width: safeRect.width - Constant.xMargin * 2,
