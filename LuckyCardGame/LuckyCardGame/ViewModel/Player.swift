@@ -10,7 +10,7 @@ import Foundation
 struct Player {
     private var hand: LuckyDeck = LuckyDeck()
     
-    mutating func getCards(cards: [LuckyCard]) {
+    mutating func receiveCards(_ cards: [LuckyCard]) {
         hand.appendCards(cards)
     }
     
