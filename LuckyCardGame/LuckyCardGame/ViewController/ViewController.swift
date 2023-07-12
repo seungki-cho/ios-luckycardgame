@@ -92,19 +92,12 @@ final class ViewController: UIViewController {
     private func setupDeck(_ selectedIndex: Int) {
         deckCount = selectedIndex + 3
         
-        switch selectedIndex {
-        case 0:
-            luckyGameService.changeRule(.threePlayer)
-        case 1:
-            luckyGameService.changeRule(.fourPlayer)
-        default:
-            luckyGameService.changeRule(.fivePlayer)
-        }
-        
+        guard let rule = LuckyGameRule(rawValue: selectedIndex) else { return }
+        luckyGameService.changeRule(rule)
         
         var cards = luckyGameService.getCardArray()
         floorDeckView.changeCards(cards.removeLast())
-        deckStackView.changeDecks(luckyDecks: cards)
+        deckStackView.changeDecks(cards)
         
         configureFrame()
     }
