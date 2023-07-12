@@ -30,4 +30,8 @@ struct LuckyCard {
         card.isFlipped.toggle()
         return card
     }
+    
+    func isLike(number: NumberType) -> Bool {
+        numberType == number
+    }
 }
