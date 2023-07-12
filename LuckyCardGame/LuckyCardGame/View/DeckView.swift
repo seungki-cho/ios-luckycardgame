@@ -15,40 +15,24 @@ final class DeckView: CommonDeckView {
         label.alpha = 0.5
         return label
     }()
-    
-    //MARK: - Property
-    let alphabet: String
-    
     //MARK: - LifeCycle
     init(_ alphabet: String) {
-        self.alphabet = alphabet
+        self.alphabetLabel.text = alphabet
         super.init(frame: .zero)
-        configureUI()
+        backgroundColor = .systemGray5
     }
     
     private override init(frame: CGRect) {
-        alphabet = "A"
         super.init(frame: frame)
-        configureUI()
+        backgroundColor = .systemGray5
     }
     
     required init?(coder: NSCoder) {
-        alphabet = "A"
         super.init(coder: coder)
-        configureUI()
+        backgroundColor = .systemGray5
     }
     
     //MARK: - Helper
-    override func configureUI() {
-        layer.cornerRadius = 10
-        backgroundColor = .systemGray5
-        
-        addSubview(alphabetLabel)
-        cardViews.forEach { addSubview($0) }
-        
-        alphabetLabel.text = alphabet
-    }
-    
     override func configureFrame() {
         alphabetLabel.frame = CGRect(x: 10.0,
                                      y: frame.height / 4.0,
