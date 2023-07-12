@@ -24,4 +24,10 @@ struct LuckyCard {
     var isFlipped = false
 
     var description: String { animalType.description + numberType.description }
+    
+    func flipped() -> LuckyCard {
+        var card = self
+        card.isFlipped.toggle()
+        return card
+    }
 }
