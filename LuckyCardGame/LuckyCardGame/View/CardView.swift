@@ -61,6 +61,10 @@ final class CardView: UIView {
     //MARK: - Helper
     private func configureUI() {
         layer.borderWidth = 1.0
+        layer.cornerRadius = 15
+        isHidden = true
+        backgroundColor = .white
+        
         [topNumberLabel, animalLabel, bottomNumberLabel, backImageView].forEach {
             addSubview($0)
         }

@@ -15,17 +15,11 @@ class CommonDeckView: UIView {
     }
     
     //MARK: - UI Property
-    let cardViews: [CardView] = {
-        let cardViews = (0..<9).map{ _ in CardView() }
-        cardViews.forEach { cardView in
-            cardView.isHidden = true;
-            cardView.backgroundColor = .white;
-            cardView.layer.cornerRadius = 15
-        }
-        return cardViews
-    }()
+    let cardViews: [CardView] = { (0..<9).map{ _ in CardView() } }()
+    
     //MARK: - Property
     var cardCount = 8
+    
     //MARK: - LifeCycle
     override init(frame: CGRect) {
         super.init(frame: frame)
