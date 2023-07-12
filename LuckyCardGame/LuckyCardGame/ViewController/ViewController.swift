@@ -39,8 +39,8 @@ final class ViewController: UIViewController {
     private let luckyGameService = LuckyGameService(rule: .threePlayer)
     
     //MARK: - LifeCycle
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func loadView() {
+        super.loadView()
         configureUI()
         setupDeck(headerView.selectedSegmentIndex)
     }
@@ -81,8 +81,6 @@ final class ViewController: UIViewController {
                                   y: safeRect.maxY - floorViewHeight - Constant.yMargin,
                                   width: safeRect.width - Constant.xMargin * 2,
                                   height: floorViewHeight)
-        
-        deckStackView.configureFrame()
     }
     
     @objc private func didChangeCount(segement: UISegmentedControl) {
