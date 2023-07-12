@@ -23,17 +23,20 @@ final class DeckStackView: UIView {
     init() {
         super.init(frame: .zero)
         deckViews.forEach { addSubview($0) }
-        configureFrame()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         deckViews.forEach { addSubview($0) }
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
         configureFrame()
     }
     
     //MARK: - Helper
-    func changeDecks(luckyDecks: [[LuckyCard]]) {
+    func changeDecks(_ luckyDecks: [[LuckyCard]]) {
         deckViews.forEach { $0.isHidden = true }
         zip(luckyDecks, deckViews).forEach { deck, deckView in
             deckView.isHidden = false
