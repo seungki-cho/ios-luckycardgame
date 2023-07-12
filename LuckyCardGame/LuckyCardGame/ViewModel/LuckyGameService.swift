@@ -19,34 +19,42 @@ final class LuckyGameService {
         self.rule = rule
     }
     
-    private func dealCard() {
-        deck.discardCard(numbers: rule.removalNumbers)
-        deck.appendCards( AnimalType.allCases.flatMap { animal in
-            NumberType.allCases.map { LuckyCard(animalType: animal, numberType: $0)}
-        }.shuffled())
-        
-        mainPlayer.getCards(cards: (0..<rule.playerCardCount).map { _ in
-            var card = deck.drawCard()
-            card.isFlipped = true
-            return card
-        })
-        (0..<rule.supportingPlayerCount).forEach { index in
-            players[index].getCards(cards: (0..<rule.playerCardCount).map { _ in deck.drawCard() })
-        }
-        floor.getCards(cards: (0..<rule.floorCardCount).map { _ in deck.drawCard()} )
-    }
-    
     func changeRule(_ newRule: LuckyGameRule) {
         rule = newRule
-        deck = .init()
-        mainPlayer = .init()
-        players = (0..<rule.supportingPlayerCount).map { _ in Player() }
-        floor = .init()
-        
         dealCard()
+    }
+    
+    private func dealCard() {
+        clearGame()
+        makeNewDeck()
+        distributeCards()
     }
     
     func getCardArray() -> [[LuckyCard]] {
         [mainPlayer.showCards()] + players.map { $0.showCards() } + [floor.showCards()]
+    }
+    
+    private func clearGame() {
+        deck = .init()
+        mainPlayer = .init()
+        players = (0..<rule.supportingPlayerCount).map { _ in Player() }
+        floor = .init()
+    }
+    
+    private func makeNewDeck() {
+        deck.discardCard(numbers: rule.removalNumbers)
+        let cards = AnimalType.allCases.flatMap { animal in
+            NumberType.allCases.map { LuckyCard(animalType: animal, numberType: $0)}
+        }.shuffled()
+        deck.appendCards(cards)
+    }
+    
+    private func distributeCards() {
+        mainPlayer.receiveCards((0..<rule.playerCardCount).map { _ in deck.drawCard().flipped() })
+        for playerIndex in (0..<players.count) {
+            let cards = (0..<rule.playerCardCount).map { _ in deck.drawCard() }
+            players[playerIndex].receiveCards(cards)
+        }
+        floor.receiveCards((0..<rule.floorCardCount).map { _ in deck.drawCard()})
     }
 }
