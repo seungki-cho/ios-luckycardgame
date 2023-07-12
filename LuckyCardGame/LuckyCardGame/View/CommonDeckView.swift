@@ -18,7 +18,7 @@ class CommonDeckView: UIView {
     let cardViews: [CardView] = { (0..<9).map{ _ in CardView() } }()
     
     //MARK: - Property
-    var cardCount = 8
+    var cardCount = 0
     
     //MARK: - LifeCycle
     override init(frame: CGRect) {
@@ -42,7 +42,7 @@ class CommonDeckView: UIView {
     }
     
     func configureFrame() {
-        fatalError("상속받는다면, 구현해야 합니다.")
+
     }
     
     func changeCards(_ cards: [LuckyCard]) {
