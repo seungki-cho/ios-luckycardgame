@@ -89,9 +89,9 @@ final class CardView: UIView {
         
     }
     
-    func change(number: String, animal: String) {
-        let number = String(Int(number) ?? 1)
+    func change(card: LuckyCard) {
+        let number = String(Int(card.numberType.description) ?? 1)
         (topNumberLabel.text, bottomNumberLabel.text) = (number, number)
-        animalLabel.text = animal
+        animalLabel.text = card.animalType.description
     }
 }

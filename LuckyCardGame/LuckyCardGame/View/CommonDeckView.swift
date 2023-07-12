@@ -57,8 +57,7 @@ class CommonDeckView: UIView {
         
         zip(cards, cardViews).forEach { (card: LuckyCard, cardView: CardView) in
             cardView.isHidden = false
-            cardView.change(number: card.numberType.description,
-                            animal: card.animalType.description)
+            cardView.change(card: card)
             cardView.isFlipped = card.isFlipped
         }
         
