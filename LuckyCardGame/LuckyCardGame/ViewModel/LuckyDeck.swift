@@ -12,10 +12,10 @@ final class LuckyDeck: CustomStringConvertible {
     
     var description: String { deck.map { $0.description }.joined(separator: ", ") }
     
-    func discardCard(animals removalAnimal: [AnimalType] = [],
-                     numbers removalNumber: [NumberType] = []
-    ) {
-        deck.removeAll { removalAnimal.contains($0.animalType) || removalNumber.contains($0.numberType) }
+    func discardCard(numbers removalNumber: [NumberType] = []) {
+        deck.removeAll { card in
+            !removalNumber.filter { card.isLike(number: $0) }.isEmpty
+        }
     }
     
     func drawCard() -> LuckyCard {
