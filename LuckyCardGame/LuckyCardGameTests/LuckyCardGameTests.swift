@@ -10,27 +10,65 @@ import XCTest
 
 final class LuckyCardGameTests: XCTestCase {
 
+    var sut: LuckyGameService!
+    
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        sut = LuckyGameService(rule: .threePlayer)
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        sut = nil
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    
+    func test룰에따라카드를나눠주면_개수가일치한다() throws {
+        try test네명룰일때_카드를나눠주면_개수가일치한다()
+        try test세명룰일때_카드를나눠주면_개수가일치한다()
+        try test다섯명룰일때_카드를나눠주면_개수가일치한다()
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func test세명룰일때_카드를나눠주면_개수가일치한다() throws {
+        // Given
+        let rule: LuckyGameRule = .threePlayer
+        sut.changeRule(rule)
+        // When
+        let cards = sut.getCardArray()
+        let cardCount = 8
+        let floorCardCount = 9
+        // Then
+        XCTAssertEqual(cards[0].count, cardCount)
+        XCTAssertEqual(cards[1].count, cardCount)
+        XCTAssertEqual(cards[2].count, cardCount)
+        XCTAssertEqual(cards[3].count, floorCardCount)
+    }
+    func test네명룰일때_카드를나눠주면_개수가일치한다() throws {
+        // Given
+        let rule: LuckyGameRule = .fourPlayer
+        sut.changeRule(rule)
+        // When
+        let cards = sut.getCardArray()
+        let cardCount = 7
+        let floorCardCount = 8
+        // Then
+        XCTAssertEqual(cards[0].count, cardCount)
+        XCTAssertEqual(cards[1].count, cardCount)
+        XCTAssertEqual(cards[2].count, cardCount)
+        XCTAssertEqual(cards[3].count, cardCount)
+        XCTAssertEqual(cards[4].count, floorCardCount)
+    }
+    func test다섯명룰일때_카드를나눠주면_개수가일치한다() throws {
+        // Given
+        let rule: LuckyGameRule = .fivePlayer
+        sut.changeRule(rule)
+        // When
+        let cards = sut.getCardArray()
+        let cardCount = 6
+        let floorCardCount = 6
+        // Then
+        XCTAssertEqual(cards[0].count, cardCount)
+        XCTAssertEqual(cards[1].count, cardCount)
+        XCTAssertEqual(cards[2].count, cardCount)
+        XCTAssertEqual(cards[3].count, cardCount)
+        XCTAssertEqual(cards[4].count, cardCount)
+        XCTAssertEqual(cards[4].count, floorCardCount)
     }
 
 }
