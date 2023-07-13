@@ -57,4 +57,17 @@ final class LuckyGameService {
         }
         floor.receiveCards((0..<rule.floorCardCount).map { _ in deck.drawCard()})
     }
+    
+    func sortMainPlayer() {
+        mainPlayer.sortDeck()
+    }
+    
+    func sortPlayer(by playerIndex: Int) {
+        guard (0..<players.count) ~= playerIndex else { return }
+        players[playerIndex].sortDeck()
+    }
+    
+    func sortFloor() {
+        floor.sortDeck()
+    }
 }
