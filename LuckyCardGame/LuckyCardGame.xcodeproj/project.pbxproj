@@ -30,6 +30,7 @@
 		C378BAB02A5C0CC800479D47 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C378BAAF2A5C0CC800479D47 /* UIImage+.swift */; };
 		C378BAB22A5C34F500479D47 /* CommonDeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C378BAB12A5C34F500479D47 /* CommonDeckView.swift */; };
 		C378BAB42A5C351100479D47 /* FloorDeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C378BAB32A5C351100479D47 /* FloorDeckView.swift */; };
+		C378BAB62A5F91BE00479D47 /* LuckyCardMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C378BAB52A5F91BE00479D47 /* LuckyCardMaker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		C378BAAF2A5C0CC800479D47 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 		C378BAB12A5C34F500479D47 /* CommonDeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonDeckView.swift; sourceTree = "<group>"; };
 		C378BAB32A5C351100479D47 /* FloorDeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloorDeckView.swift; sourceTree = "<group>"; };
+		C378BAB52A5F91BE00479D47 /* LuckyCardMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuckyCardMaker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +188,7 @@
 				C378BAA42A5697E700479D47 /* LuckyGameRule.swift */,
 				C378BAA62A569CDD00479D47 /* LuckyGameService.swift */,
 				C378BAA82A569CED00479D47 /* Player.swift */,
+				C378BAB52A5F91BE00479D47 /* LuckyCardMaker.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -346,6 +349,7 @@
 				C378BAA12A5655DF00479D47 /* LuckyCard.swift in Sources */,
 				C378BAAB2A56B98300479D47 /* CardView.swift in Sources */,
 				C378BAB02A5C0CC800479D47 /* UIImage+.swift in Sources */,
+				C378BAB62A5F91BE00479D47 /* LuckyCardMaker.swift in Sources */,
 				C378BAB22A5C34F500479D47 /* CommonDeckView.swift in Sources */,
 				C378BAA92A569CED00479D47 /* Player.swift in Sources */,
 				C378BA492A53C29200479D47 /* AppDelegate.swift in Sources */,
