@@ -17,4 +17,8 @@ struct Player {
     func showCards() -> [LuckyCard] {
         hand.showCards()
     }
+    
+    mutating func sortDeck() {
+        hand.sort()
+    }
 }
