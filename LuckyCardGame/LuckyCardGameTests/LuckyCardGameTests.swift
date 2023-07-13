@@ -10,6 +10,18 @@ import XCTest
 
 final class LuckyCardGameTests: XCTestCase {
     
+    var sut: LuckyGameService!
+    
+    override func setUpWithError() throws {
+        try super.setUpWithError()
+        sut = LuckyGameService(rule: .fivePlayer, luckyCardMaker: LuckyCardMaker())
+    }
+    
+    override func tearDownWithError() throws {
+        try super.tearDownWithError()
+        sut = nil
+    }
+    
     func test세명룰일때_카드를나눠주면_개수가일치한다() throws {
         // Given
         let sut = LuckyGameService(rule: .threePlayer, luckyCardMaker: LuckyCardMaker())
@@ -95,5 +107,16 @@ final class LuckyCardGameTests: XCTestCase {
             XCTAssertGreaterThan(number.rawValue, maxNumber)
             maxNumber = number.rawValue
         }
+    }
+    
+    func test한명이_세개의숫자가같은카드를갖고있나() throws {
+        // Given
+        let cards = (0..<36).map{ _ in LuckyCard(animalType: .cat, numberType: .eleven)}
+        sut = LuckyGameService(rule: .fivePlayer, luckyCardMaker: MockLuckyCardMaker(cards: cards))
+        // When
+        let result = sut.checkSameThreeCard()
+        print(result)
+        // Then
+        XCTAssertTrue(result)
     }
 }
