@@ -35,3 +35,9 @@ struct LuckyCard {
         numberType == number
     }
 }
+
+extension LuckyCard: Comparable {
+    static func < (lhs: LuckyCard, rhs: LuckyCard) -> Bool {
+        lhs.numberType < rhs.numberType
+    }
+}
