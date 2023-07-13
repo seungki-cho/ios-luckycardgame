@@ -20,7 +20,9 @@ import Foundation
  */
 
 struct LuckyCard {
-    let (animalType, numberType): (AnimalType, NumberType)
+    let animalType: AnimalType
+    let numberType: NumberType
+    
     var isFlipped = false
 
     var description: String { animalType.description + numberType.description }
