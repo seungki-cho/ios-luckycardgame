@@ -21,3 +21,9 @@ enum NumberType: Int, Typeable {
     
     var description: String { rawValue < 10 ? "0\(rawValue)" : "\(rawValue)" }
 }
+
+extension NumberType: Comparable {
+    static func < (lhs: NumberType, rhs: NumberType) -> Bool {
+        lhs.rawValue < rhs.rawValue
+    }
+}
