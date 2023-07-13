@@ -8,5 +8,5 @@
 import Foundation
 
 protocol LuckyCardMakerProtocol {
-    func makeNewDeck() -> [LuckyCard]
+    func makeNewDeck() -> LuckyDeck
 }
