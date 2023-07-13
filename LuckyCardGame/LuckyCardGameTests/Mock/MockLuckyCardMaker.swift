@@ -21,7 +21,22 @@ class MockLuckyCardMaker: LuckyCardMakerProtocol {
         return deck
     }
     
-    init(cards: LuckyDeck = randomDeck) {
+    static var pickThreeCardTestDeck: [LuckyCard] {
+        let stringArray = ["🐱11", "🐶09", "🐮02", "🐱09", "🐮10", "🐶03", "🐱04", "🐱07",
+                           "🐮11", "🐶02", "🐶05", "🐶07", "🐮03", "🐮04", "🐮09", "🐶01",
+                           "🐶11", "🐱08", "🐱05", "🐶04", "🐮08", "🐶08", "🐱06", "🐮01",
+                           "🐶10", "🐶06", "🐱02", "🐶12", "🐱12", "🐮06", "🐱03", "🐱01", "🐮07", "🐮05", "🐮12"]
+        
+        let deck = stringArray.compactMap { string in
+            var string = string
+            let animal = AnimalType(rawValue: String(string.removeFirst()))
+            let number = NumberType(rawValue: Int(String(string))!)
+            return LuckyCard(animalType: animal!, numberType: number!)
+        }
+        return deck
+    }
+    
+    init(cards: [LuckyCard] = randomDeck) {
         self.cards = cards
     }
     
