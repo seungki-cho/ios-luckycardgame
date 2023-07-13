@@ -22,6 +22,8 @@ final class LuckyDeck: Deckable {
         }
     }
     
+    func showSideCard(isGreater: Bool) -> LuckyCard? {
+        isGreater ? cards.last : cards.first
     }
     
     func sort() {
