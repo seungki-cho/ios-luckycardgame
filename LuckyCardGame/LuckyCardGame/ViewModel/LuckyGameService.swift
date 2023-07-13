@@ -30,14 +30,7 @@ final class LuckyGameService {
     }
     
     func getCardArray() -> [[LuckyCard]] {
-        [mainPlayer.cards] + players.map { $0.cards } + [floor.cards]
-    }
-    
-    private func clearGame() {
-        deck = .init()
-        mainPlayer = .init()
-        players = (0..<rule.supportingPlayerCount).map { _ in Player() }
-        floor = .init()
+        players.map { $0.cards } + [floor.cards]
     }
     
     private func distributeNewCards() {
@@ -52,22 +45,21 @@ final class LuckyGameService {
             deck.removeFirst(rule.playerCardCount)
         }
         
-    
-    func sortMainPlayer() {
-        mainPlayer.sortDeck()
+        let floorCards = deck // 덱에서 floorCardCount 만큼으로 변경
+        floor = FloorDeck(floorCards)
     }
     
     func sortPlayer(by playerIndex: Int) {
         guard (0..<players.count) ~= playerIndex else { return }
-        players[playerIndex].sortDeck()
+        players[playerIndex].sort()
     }
     
     func sortFloor() {
-        floor.sortDeck()
+        floor.sort()
     }
     
     func checkSameThreeCard() -> Bool {
-        let maximumCardCounts = [mainPlayer.maximumSameCardCount(), floor.maximumSameCardCount()] + players.map { $0.maximumSameCardCount() }
+        let maximumCardCounts = [floor.maximumSameCardCount()] + players.map { $0.maximumSameCardCount() }
         guard let maximumCardCount = maximumCardCounts.compactMap({ $0 }).max() else { return false }
         return maximumCardCount >= 3
     }
