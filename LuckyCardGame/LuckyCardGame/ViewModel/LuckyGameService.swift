@@ -74,4 +74,10 @@ final class LuckyGameService {
     func sortFloor() {
         floor.sortDeck()
     }
+    
+    func checkSameThreeCard() -> Bool {
+        let maximumCardCounts = [mainPlayer.maximumSameCardCount(), floor.maximumSameCardCount()] + players.map { $0.maximumSameCardCount() }
+        guard let maximumCardCount = maximumCardCounts.compactMap({ $0 }).max() else { return false }
+        return maximumCardCount >= 3
+    }
 }
