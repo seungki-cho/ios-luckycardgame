@@ -8,6 +8,7 @@
 import Foundation
 
 final class LuckyGameService {
+    //MARK: - Property
     private var rule: LuckyGameRule
     private var deck: LuckyDeck = .init()
     
@@ -17,12 +18,14 @@ final class LuckyGameService {
     
     private let luckyCardMaker: LuckyCardMakerProtocol
     
+    //MARK: - Lifecycle
     init(rule: LuckyGameRule, luckyCardMaker: LuckyCardMakerProtocol) {
         self.rule = rule
         self.luckyCardMaker = luckyCardMaker
         changeRule(rule)
     }
     
+    //MARK: - Helper
     func changeRule(_ newRule: LuckyGameRule) {
         rule = newRule
         dealCard()
@@ -35,7 +38,7 @@ final class LuckyGameService {
     }
     
     func getCardArray() -> [[LuckyCard]] {
-        [mainPlayer.showCards()] + players.map { $0.showCards() } + [floor.showCards()]
+        [mainPlayer.cards] + players.map { $0.cards } + [floor.cards]
     }
     
     private func clearGame() {
