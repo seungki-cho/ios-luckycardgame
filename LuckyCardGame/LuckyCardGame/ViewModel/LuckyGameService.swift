@@ -20,6 +20,7 @@ final class LuckyGameService {
     init(rule: LuckyGameRule, luckyCardMaker: LuckyCardMakerProtocol) {
         self.rule = rule
         self.luckyCardMaker = luckyCardMaker
+        changeRule(rule)
     }
     
     func changeRule(_ newRule: LuckyGameRule) {

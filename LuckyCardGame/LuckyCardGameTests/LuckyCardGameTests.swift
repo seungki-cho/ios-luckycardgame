@@ -14,7 +14,6 @@ final class LuckyCardGameTests: XCTestCase {
         // Given
         let sut = LuckyGameService(rule: .threePlayer, luckyCardMaker: LuckyCardMaker())
         let rule: LuckyGameRule = .threePlayer
-        sut.changeRule(rule)
         // When
         let cards = sut.getCardArray()
         let cardCount = 8
@@ -27,9 +26,7 @@ final class LuckyCardGameTests: XCTestCase {
     }
     func test네명룰일때_카드를나눠주면_개수가일치한다() throws {
         // Given
-        let sut = LuckyGameService(rule: .threePlayer, luckyCardMaker: LuckyCardMaker())
-        let rule: LuckyGameRule = .fourPlayer
-        sut.changeRule(rule)
+        let sut = LuckyGameService(rule: .fourPlayer, luckyCardMaker: LuckyCardMaker())
         // When
         let cards = sut.getCardArray()
         let cardCount = 7
@@ -43,9 +40,7 @@ final class LuckyCardGameTests: XCTestCase {
     }
     func test다섯명룰일때_카드를나눠주면_개수가일치한다() throws {
         // Given
-        let sut = LuckyGameService(rule: .threePlayer, luckyCardMaker: LuckyCardMaker())
-        let rule: LuckyGameRule = .fivePlayer
-        sut.changeRule(rule)
+        let sut = LuckyGameService(rule: .fivePlayer, luckyCardMaker: LuckyCardMaker())
         // When
         let cards = sut.getCardArray()
         let cardCount = 6
