@@ -117,11 +117,24 @@ final class LuckyCardGameTests: XCTestCase {
     
     func test한명이_세개의숫자가같은카드를갖고있나() throws {
         // Given
-        let cards = (0..<36).map{ _ in LuckyCard(animalType: .cat, numberType: .eleven)}
-        sut = LuckyGameService(rule: .fivePlayer, luckyCardMaker: MockLuckyCardMaker(cards: cards))
+        let newDeck = (0..<36).map{ _ in LuckyCard(animalType: .cat, numberType: .eleven)}
+        sut = LuckyGameService(rule: .fivePlayer, luckyCardMaker: MockLuckyCardMaker(cards: newDeck))
         // When
         let result = sut.checkSameThreeCard()
         print(result)
+        // Then
+        XCTAssertTrue(result)
+    }
+    
+    func test세장의카드를뽑아서_같은지판단한다() throws {
+        // Given
+        sut = .init(rule: .threePlayer,
+                    luckyCardMaker: MockLuckyCardMaker(cards: MockLuckyCardMaker.pickThreeCardTestDeck))
+        // When
+        (0..<LuckyGameRule.threePlayer.playerCount).forEach { sut.sortPlayer(by: $0) }
+        
+        let choices: [(playerIndex: Int, isGreater: Bool)] = [(0, true), (1, true), (2, true)]
+        let result = sut.isSame(threeCards: choices)
         // Then
         XCTAssertTrue(result)
     }
