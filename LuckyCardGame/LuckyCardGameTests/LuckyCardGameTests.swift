@@ -21,11 +21,17 @@ final class LuckyCardGameTests: XCTestCase {
         try super.tearDownWithError()
         sut = nil
     }
-    
+    func test세명룰일때_카드를나눠주면_12카드가없다() throws {
+        // Given
+        sut = .init(rule: .threePlayer, luckyCardMaker: LuckyCardMaker())
+        // When
+        let isNoTwelveCard = sut.getCardArray().flatMap { $0 }.map { $0.numberType.rawValue }.allSatisfy { $0 != 12 }
+        // Then
+        XCTAssertTrue(isNoTwelveCard)
+    }
     func test세명룰일때_카드를나눠주면_개수가일치한다() throws {
         // Given
         let sut = LuckyGameService(rule: .threePlayer, luckyCardMaker: LuckyCardMaker())
-        let rule: LuckyGameRule = .threePlayer
         // When
         let cards = sut.getCardArray()
         let cardCount = 8
@@ -69,14 +75,14 @@ final class LuckyCardGameTests: XCTestCase {
     func test메인플레이어를_오름차순정렬한다() throws {
         // Given
         let sut = LuckyGameService(rule: .threePlayer, luckyCardMaker: MockLuckyCardMaker())
-        sut.sortMainPlayer()
+        sut.sortPlayer(by: 0)
         // When
         let mainPlayerDeck = sut.getCardArray()[0]
         let sortedNumbers = mainPlayerDeck.map { $0.numberType }
         // Then
         var maxNumber = 0
         for number in sortedNumbers {
-            XCTAssertGreaterThan(number.rawValue, maxNumber)
+            XCTAssertGreaterThanOrEqual(number.rawValue, maxNumber)
             maxNumber = number.rawValue
         }
     }
@@ -85,26 +91,26 @@ final class LuckyCardGameTests: XCTestCase {
         let sut = LuckyGameService(rule: .fivePlayer, luckyCardMaker: MockLuckyCardMaker())
         sut.sortPlayer(by: 2)
         // When
-        let playerDeck = sut.getCardArray()[0]
+        let playerDeck = sut.getCardArray()[2]
         let sortedNumbers = playerDeck.map { $0.numberType }
         // Then
         var maxNumber = 0
         for number in sortedNumbers {
-            XCTAssertGreaterThan(number.rawValue, maxNumber)
+            XCTAssertGreaterThanOrEqual(number.rawValue, maxNumber)
             maxNumber = number.rawValue
         }
     }
     func test바닥카드를_오름차순정렬한다() throws {
         // Given
         let sut = LuckyGameService(rule: .fivePlayer, luckyCardMaker: MockLuckyCardMaker())
-        sut.sortPlayer(by: 2)
+        sut.sortFloor()
         // When
-        let floorDeck = sut.getCardArray()[0]
+        let floorDeck = sut.getCardArray()[5]
         let sortedNumbers = floorDeck.map { $0.numberType }
         // Then
         var maxNumber = 0
         for number in sortedNumbers {
-            XCTAssertGreaterThan(number.rawValue, maxNumber)
+            XCTAssertGreaterThanOrEqual(number.rawValue, maxNumber)
             maxNumber = number.rawValue
         }
     }
