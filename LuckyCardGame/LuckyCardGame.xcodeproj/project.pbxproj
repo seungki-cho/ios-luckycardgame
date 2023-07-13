@@ -32,6 +32,7 @@
 		C378BAB62A5F91BE00479D47 /* LuckyCardMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C378BAB52A5F91BE00479D47 /* LuckyCardMaker.swift */; };
 		C378BAB82A5F998A00479D47 /* LuckyCardMakerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C378BAB72A5F998A00479D47 /* LuckyCardMakerProtocol.swift */; };
 		C378BABB2A5F9F6B00479D47 /* MockLuckyCardMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C378BABA2A5F9F6B00479D47 /* MockLuckyCardMaker.swift */; };
+		C3F4EBAF2A6065DD002E69BD /* FloorDeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F4EBAE2A6065DD002E69BD /* FloorDeck.swift */; };
 		C3F4EBB12A6065EF002E69BD /* Deckable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F4EBB02A6065EF002E69BD /* Deckable.swift */; };
 /* End PBXBuildFile section */
 
@@ -82,6 +83,7 @@
 		C378BAB52A5F91BE00479D47 /* LuckyCardMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuckyCardMaker.swift; sourceTree = "<group>"; };
 		C378BAB72A5F998A00479D47 /* LuckyCardMakerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuckyCardMakerProtocol.swift; sourceTree = "<group>"; };
 		C378BABA2A5F9F6B00479D47 /* MockLuckyCardMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLuckyCardMaker.swift; sourceTree = "<group>"; };
+		C3F4EBAE2A6065DD002E69BD /* FloorDeck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloorDeck.swift; sourceTree = "<group>"; };
 		C3F4EBB02A6065EF002E69BD /* Deckable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deckable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -191,6 +193,7 @@
 				C378BAA02A5655DF00479D47 /* LuckyCard.swift */,
 				C3F4EBB02A6065EF002E69BD /* Deckable.swift */,
 				C378BAA22A56560400479D47 /* LuckyDeck.swift */,
+				C3F4EBAE2A6065DD002E69BD /* FloorDeck.swift */,
 				C378BAA42A5697E700479D47 /* LuckyGameRule.swift */,
 				C378BAA62A569CDD00479D47 /* LuckyGameService.swift */,
 				C378BAB52A5F91BE00479D47 /* LuckyCardMaker.swift */,
@@ -363,6 +366,7 @@
 				C378BAA12A5655DF00479D47 /* LuckyCard.swift in Sources */,
 				C378BAAB2A56B98300479D47 /* CardView.swift in Sources */,
 				C378BAB02A5C0CC800479D47 /* UIImage+.swift in Sources */,
+				C3F4EBAF2A6065DD002E69BD /* FloorDeck.swift in Sources */,
 				C378BAB62A5F91BE00479D47 /* LuckyCardMaker.swift in Sources */,
 				C378BAB22A5C34F500479D47 /* CommonDeckView.swift in Sources */,
 				C378BA492A53C29200479D47 /* AppDelegate.swift in Sources */,
