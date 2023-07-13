@@ -36,7 +36,7 @@ final class ViewController: UIViewController {
     }()
     //MARK: - Property
     private var deckCount = 3
-    private let luckyGameService = LuckyGameService(rule: .threePlayer)
+    private let luckyGameService = LuckyGameService(rule: .threePlayer, luckyCardMaker: LuckyCardMaker())
     
     //MARK: - LifeCycle
     override func loadView() {
