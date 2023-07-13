@@ -10,14 +10,14 @@ import Foundation
 enum LuckyGameRule: Int {
     case threePlayer, fourPlayer, fivePlayer
     
-    var supportingPlayerCount: Int {
+    var playerCount: Int {
         switch self {
         case .threePlayer:
-            return 2
-        case .fourPlayer:
             return 3
-        case .fivePlayer:
+        case .fourPlayer:
             return 4
+        case .fivePlayer:
+            return 5
         }
     }
     
