@@ -63,4 +63,23 @@ final class LuckyGameService {
         guard let maximumCardCount = maximumCardCounts.compactMap({ $0 }).max() else { return false }
         return maximumCardCount >= 3
     }
+    
+    func isSame(threeCards choices: [(playerIndex: Int, isGreater: Bool)], floorCardIndex: Int? = nil) -> Bool {
+        guard (choices.count == 2 && floorCardIndex != nil) ||
+                (choices.count == 3 && floorCardIndex == nil),
+              choices.allSatisfy({ (0..<rule.playerCount) ~= $0.playerIndex }) else { return false }
+        
+        var selectedCards = choices.map { (index, isGreater) in
+            players[index].showSideCard(isGreater: isGreater)
+        }
+        if let floorCardIndex {
+            selectedCards.append(floor.showCard(at: floorCardIndex))
+        }
+        
+        let nonNilCards = selectedCards.compactMap { $0 }
+        if nonNilCards.count == 3, nonNilCards.allSatisfy({ $0.isLike(number: nonNilCards[0].numberType)}) {
+            return true
+        }
+        return false
+    }
 }
