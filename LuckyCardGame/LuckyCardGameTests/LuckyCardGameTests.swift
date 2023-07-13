@@ -138,6 +138,7 @@ final class LuckyCardGameTests: XCTestCase {
         // Then
         XCTAssertTrue(result)
     }
+    
     func test바닥을포함하여_세장의카드를뽑아서_같은지판단한다() throws {
         // Given
         sut = .init(rule: .threePlayer,
@@ -151,4 +152,16 @@ final class LuckyCardGameTests: XCTestCase {
         XCTAssertTrue(result)
     }
     
+    func test세장의카드를뽑아서_다른지판단한다() throws {
+        // Given
+        sut = .init(rule: .threePlayer,
+                    luckyCardMaker: MockLuckyCardMaker(cards: MockLuckyCardMaker.pickThreeCardTestDeck))
+        // When
+        (0..<LuckyGameRule.threePlayer.playerCount).forEach { sut.sortPlayer(by: $0) }
+        
+        let choices: [(playerIndex: Int, isGreater: Bool)] = [(0, true), (1, false), (2, true)]
+        let result = sut.isSame(threeCards: choices)
+        // Then
+        XCTAssertFalse(result)
+    }
 }
