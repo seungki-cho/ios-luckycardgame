@@ -10,7 +10,8 @@ import Foundation
 @testable import LuckyCardGame
 
 class MockLuckyCardMaker: LuckyCardMakerProtocol {
-    func makeNewDeck() -> [LuckyCard] {
+    let cards: [LuckyCard]
+    static var randomDeck: [LuckyCard] {
         var deck = [LuckyCard]()
         for number in NumberType.allCases.reversed() {
             for animal in AnimalType.allCases {
@@ -18,5 +19,13 @@ class MockLuckyCardMaker: LuckyCardMakerProtocol {
             }
         }
         return deck
+    }
+    
+    init(cards: [LuckyCard] = randomDeck) {
+        self.cards = cards
+    }
+    
+    func makeNewDeck() -> [LuckyCard] {
+        return cards
     }
 }
