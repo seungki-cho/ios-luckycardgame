@@ -7,23 +7,17 @@
 
 import Foundation
 
-final class LuckyDeck: CustomStringConvertible {
-    private var deck: [LuckyCard] = []
+final class LuckyDeck: Deckable {
+    private(set) var cards: [LuckyCard] = []
     
-    var description: String { deck.map { $0.description }.joined(separator: ", ") }
+    var description: String { cards.map { $0.description }.joined(separator: ", ") }
     
     init(_ cards: [LuckyCard] = []) {
-        self.deck = cards
-    }
-    
-    var maximumSameCardCount: Int? {
-        deck.reduce(into: [Int: Int]()) { (dict, card) in
-            dict[card.numberType.rawValue] = (dict[card.numberType.rawValue] ?? 0) + 1
-        }.values.max()
+        self.cards = cards
     }
     
     func discardCard(numbers removalNumber: [NumberType] = []) {
-        deck.removeAll { card in
+        cards.removeAll { card in
             !removalNumber.filter { card.isLike(number: $0) }.isEmpty
         }
     }
@@ -45,6 +39,6 @@ final class LuckyDeck: CustomStringConvertible {
     }
     
     func sort() {
-        deck.sort()
+        cards.sort()
     }
 }
