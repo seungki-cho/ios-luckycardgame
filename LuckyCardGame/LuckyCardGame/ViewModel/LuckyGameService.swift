@@ -49,20 +49,21 @@ final class LuckyGameService {
     }
     
     private func makeNewDeck() {
-        deck.discardCard(numbers: NumberType.allCases)
-        
-        let newDeck = luckyCardMaker.makeNewDeck()
-        deck.appendCards(newDeck)
+        deck = luckyCardMaker.makeNewDeck()
         deck.discardCard(numbers: rule.removalNumbers)
     }
     
     private func distributeCards() {
-        mainPlayer.receiveCards((0..<rule.playerCardCount).map { _ in deck.drawCard().flipped() })
+        let mainCards = (0..<rule.playerCardCount).map { _ in deck.drawCard().flipped() }
+        mainPlayer.changeDeck(LuckyDeck(mainCards))
+        
         for playerIndex in (0..<players.count) {
             let cards = (0..<rule.playerCardCount).map { _ in deck.drawCard() }
-            players[playerIndex].receiveCards(cards)
+            players[playerIndex].changeDeck(LuckyDeck(cards))
         }
-        floor.receiveCards((0..<rule.floorCardCount).map { _ in deck.drawCard()})
+        
+        let floorCards = (0..<rule.floorCardCount).map { _ in deck.drawCard()}
+        floor.changeDeck(LuckyDeck(floorCards))
     }
     
     func sortMainPlayer() {

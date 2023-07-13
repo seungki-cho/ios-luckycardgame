@@ -12,6 +12,10 @@ final class LuckyDeck: CustomStringConvertible {
     
     var description: String { deck.map { $0.description }.joined(separator: ", ") }
     
+    init(_ cards: [LuckyCard] = []) {
+        self.deck = cards
+    }
+    
     var maximumSameCardCount: Int? {
         deck.reduce(into: [Int: Int]()) { (dict, card) in
             dict[card.numberType.rawValue] = (dict[card.numberType.rawValue] ?? 0) + 1
