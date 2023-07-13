@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+struct LuckyCardMaker: LuckyCardMakerProtocol {
+    func makeNewDeck() -> [LuckyCard] {
+        AnimalType.allCases.flatMap { animal in
+            NumberType.allCases.map { LuckyCard(animalType: animal, numberType: $0)}
+        }.shuffled()
+    }
+}
