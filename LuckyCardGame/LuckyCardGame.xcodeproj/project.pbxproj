@@ -32,6 +32,7 @@
 		C378BAB62A5F91BE00479D47 /* LuckyCardMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C378BAB52A5F91BE00479D47 /* LuckyCardMaker.swift */; };
 		C378BAB82A5F998A00479D47 /* LuckyCardMakerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C378BAB72A5F998A00479D47 /* LuckyCardMakerProtocol.swift */; };
 		C378BABB2A5F9F6B00479D47 /* MockLuckyCardMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C378BABA2A5F9F6B00479D47 /* MockLuckyCardMaker.swift */; };
+		C3F4EBB12A6065EF002E69BD /* Deckable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F4EBB02A6065EF002E69BD /* Deckable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		C378BAB52A5F91BE00479D47 /* LuckyCardMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuckyCardMaker.swift; sourceTree = "<group>"; };
 		C378BAB72A5F998A00479D47 /* LuckyCardMakerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuckyCardMakerProtocol.swift; sourceTree = "<group>"; };
 		C378BABA2A5F9F6B00479D47 /* MockLuckyCardMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLuckyCardMaker.swift; sourceTree = "<group>"; };
+		C3F4EBB02A6065EF002E69BD /* Deckable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deckable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +189,7 @@
 				C378BA9C2A5655B900479D47 /* AnimalType.swift */,
 				C378BA9E2A5655BF00479D47 /* NumberType.swift */,
 				C378BAA02A5655DF00479D47 /* LuckyCard.swift */,
+				C3F4EBB02A6065EF002E69BD /* Deckable.swift */,
 				C378BAA22A56560400479D47 /* LuckyDeck.swift */,
 				C378BAA42A5697E700479D47 /* LuckyGameRule.swift */,
 				C378BAA62A569CDD00479D47 /* LuckyGameService.swift */,
@@ -365,6 +368,7 @@
 				C378BA492A53C29200479D47 /* AppDelegate.swift in Sources */,
 				C378BA4B2A53C29200479D47 /* SceneDelegate.swift in Sources */,
 				C378BA9F2A5655BF00479D47 /* NumberType.swift in Sources */,
+				C3F4EBB12A6065EF002E69BD /* Deckable.swift in Sources */,
 				C378BA9B2A56559B00479D47 /* Typeable.swift in Sources */,
 				C378BA7E2A540E3F00479D47 /* DeckView.swift in Sources */,
 				C378BA802A540E5B00479D47 /* DeckStackView.swift in Sources */,
