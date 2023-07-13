@@ -25,7 +25,10 @@ class MockLuckyCardMaker: LuckyCardMakerProtocol {
         self.cards = cards
     }
     
-    func makeNewDeck() -> LuckyDeck {
-        return cards
+    func makeNewDeck(without numbers: [LuckyCardGame.NumberType] = []) -> [LuckyCardGame.LuckyCard] {
+        cards.filter { card in
+            numbers.allSatisfy { !card.isLike(number: $0) }
+        }
+                      
     }
 }

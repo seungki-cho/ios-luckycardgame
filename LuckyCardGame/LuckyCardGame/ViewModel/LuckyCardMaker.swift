@@ -8,13 +8,11 @@
 import Foundation
 
 struct LuckyCardMaker: LuckyCardMakerProtocol {
-    func makeNewDeck() -> LuckyDeck {
-        let allCards = AnimalType.allCases.flatMap { animal in
-            NumberType.allCases.map { LuckyCard(animalType: animal, numberType: $0)}
+    func makeNewDeck(without numbers: [NumberType] = []) -> [LuckyCard] {
+        AnimalType.allCases.flatMap { animal in
+            NumberType.allCases.filter { !numbers.contains($0) }.map {
+                LuckyCard(animalType: animal, numberType: $0)
+            }
         }.shuffled()
-        let newDeck = LuckyDeck()
-        newDeck.appendCards(allCards)
-        
-        return newDeck
     }
 }
