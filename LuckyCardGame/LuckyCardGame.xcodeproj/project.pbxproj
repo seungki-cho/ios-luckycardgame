@@ -32,6 +32,7 @@
 		C378BAB42A5C351100479D47 /* FloorDeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C378BAB32A5C351100479D47 /* FloorDeckView.swift */; };
 		C378BAB62A5F91BE00479D47 /* LuckyCardMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C378BAB52A5F91BE00479D47 /* LuckyCardMaker.swift */; };
 		C378BAB82A5F998A00479D47 /* LuckyCardMakerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C378BAB72A5F998A00479D47 /* LuckyCardMakerProtocol.swift */; };
+		C378BABB2A5F9F6B00479D47 /* MockLuckyCardMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C378BABA2A5F9F6B00479D47 /* MockLuckyCardMaker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		C378BAB32A5C351100479D47 /* FloorDeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloorDeckView.swift; sourceTree = "<group>"; };
 		C378BAB52A5F91BE00479D47 /* LuckyCardMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuckyCardMaker.swift; sourceTree = "<group>"; };
 		C378BAB72A5F998A00479D47 /* LuckyCardMakerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuckyCardMakerProtocol.swift; sourceTree = "<group>"; };
+		C378BABA2A5F9F6B00479D47 /* MockLuckyCardMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLuckyCardMaker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +146,7 @@
 		C378BA5E2A53C29300479D47 /* LuckyCardGameTests */ = {
 			isa = PBXGroup;
 			children = (
+				C378BAB92A5F9F4700479D47 /* Mock */,
 				C378BA5F2A53C29300479D47 /* LuckyCardGameTests.swift */,
 			);
 			path = LuckyCardGameTests;
@@ -213,6 +216,14 @@
 				C378BAAF2A5C0CC800479D47 /* UIImage+.swift */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		C378BAB92A5F9F4700479D47 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				C378BABA2A5F9F6B00479D47 /* MockLuckyCardMaker.swift */,
+			);
+			path = Mock;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -373,6 +384,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C378BA602A53C29300479D47 /* LuckyCardGameTests.swift in Sources */,
+				C378BABB2A5F9F6B00479D47 /* MockLuckyCardMaker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
