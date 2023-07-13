@@ -21,4 +21,8 @@ struct Player {
     mutating func sortDeck() {
         hand.sort()
     }
+    
+    func maximumSameCardCount() -> Int? {
+        hand.maximumSameCardCount
+    }
 }
