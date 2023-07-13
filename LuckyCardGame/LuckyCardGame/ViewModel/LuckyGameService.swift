@@ -15,8 +15,11 @@ final class LuckyGameService {
     private var players: [Player] = []
     private var floor: Player = .init()
     
-    init(rule: LuckyGameRule) {
+    private let luckyCardMaker: LuckyCardMakerProtocol
+    
+    init(rule: LuckyGameRule, luckyCardMaker: LuckyCardMakerProtocol) {
         self.rule = rule
+        self.luckyCardMaker = luckyCardMaker
     }
     
     func changeRule(_ newRule: LuckyGameRule) {
@@ -42,11 +45,9 @@ final class LuckyGameService {
     }
     
     private func makeNewDeck() {
-        deck.discardCard(numbers: rule.removalNumbers)
-        let cards = AnimalType.allCases.flatMap { animal in
-            NumberType.allCases.map { LuckyCard(animalType: animal, numberType: $0)}
-        }.shuffled()
+        let cards = luckyCardMaker.makeNewDeck()
         deck.appendCards(cards)
+        deck.discardCard(numbers: rule.removalNumbers)
     }
     
     private func distributeCards() {
