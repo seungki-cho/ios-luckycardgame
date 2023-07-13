@@ -31,6 +31,7 @@
 		C378BAB22A5C34F500479D47 /* CommonDeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C378BAB12A5C34F500479D47 /* CommonDeckView.swift */; };
 		C378BAB42A5C351100479D47 /* FloorDeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C378BAB32A5C351100479D47 /* FloorDeckView.swift */; };
 		C378BAB62A5F91BE00479D47 /* LuckyCardMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C378BAB52A5F91BE00479D47 /* LuckyCardMaker.swift */; };
+		C378BAB82A5F998A00479D47 /* LuckyCardMakerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C378BAB72A5F998A00479D47 /* LuckyCardMakerProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		C378BAB12A5C34F500479D47 /* CommonDeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonDeckView.swift; sourceTree = "<group>"; };
 		C378BAB32A5C351100479D47 /* FloorDeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloorDeckView.swift; sourceTree = "<group>"; };
 		C378BAB52A5F91BE00479D47 /* LuckyCardMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuckyCardMaker.swift; sourceTree = "<group>"; };
+		C378BAB72A5F998A00479D47 /* LuckyCardMakerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuckyCardMakerProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +191,7 @@
 				C378BAA62A569CDD00479D47 /* LuckyGameService.swift */,
 				C378BAA82A569CED00479D47 /* Player.swift */,
 				C378BAB52A5F91BE00479D47 /* LuckyCardMaker.swift */,
+				C378BAB72A5F998A00479D47 /* LuckyCardMakerProtocol.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -361,6 +364,7 @@
 				C378BAA72A569CDD00479D47 /* LuckyGameService.swift in Sources */,
 				C378BAA32A56560400479D47 /* LuckyDeck.swift in Sources */,
 				C378BA9D2A5655B900479D47 /* AnimalType.swift in Sources */,
+				C378BAB82A5F998A00479D47 /* LuckyCardMakerProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
