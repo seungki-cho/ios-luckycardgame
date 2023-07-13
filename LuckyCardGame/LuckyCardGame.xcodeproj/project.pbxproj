@@ -25,7 +25,6 @@
 		C378BAA32A56560400479D47 /* LuckyDeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = C378BAA22A56560400479D47 /* LuckyDeck.swift */; };
 		C378BAA52A5697E700479D47 /* LuckyGameRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = C378BAA42A5697E700479D47 /* LuckyGameRule.swift */; };
 		C378BAA72A569CDD00479D47 /* LuckyGameService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C378BAA62A569CDD00479D47 /* LuckyGameService.swift */; };
-		C378BAA92A569CED00479D47 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = C378BAA82A569CED00479D47 /* Player.swift */; };
 		C378BAAB2A56B98300479D47 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C378BAAA2A56B98300479D47 /* CardView.swift */; };
 		C378BAB02A5C0CC800479D47 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C378BAAF2A5C0CC800479D47 /* UIImage+.swift */; };
 		C378BAB22A5C34F500479D47 /* CommonDeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C378BAB12A5C34F500479D47 /* CommonDeckView.swift */; };
@@ -75,7 +74,6 @@
 		C378BAA22A56560400479D47 /* LuckyDeck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuckyDeck.swift; sourceTree = "<group>"; };
 		C378BAA42A5697E700479D47 /* LuckyGameRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuckyGameRule.swift; sourceTree = "<group>"; };
 		C378BAA62A569CDD00479D47 /* LuckyGameService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuckyGameService.swift; sourceTree = "<group>"; };
-		C378BAA82A569CED00479D47 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		C378BAAA2A56B98300479D47 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		C378BAAF2A5C0CC800479D47 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 		C378BAB12A5C34F500479D47 /* CommonDeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonDeckView.swift; sourceTree = "<group>"; };
@@ -192,7 +190,6 @@
 				C378BAA22A56560400479D47 /* LuckyDeck.swift */,
 				C378BAA42A5697E700479D47 /* LuckyGameRule.swift */,
 				C378BAA62A569CDD00479D47 /* LuckyGameService.swift */,
-				C378BAA82A569CED00479D47 /* Player.swift */,
 				C378BAB52A5F91BE00479D47 /* LuckyCardMaker.swift */,
 				C378BAB72A5F998A00479D47 /* LuckyCardMakerProtocol.swift */,
 			);
@@ -365,7 +362,6 @@
 				C378BAB02A5C0CC800479D47 /* UIImage+.swift in Sources */,
 				C378BAB62A5F91BE00479D47 /* LuckyCardMaker.swift in Sources */,
 				C378BAB22A5C34F500479D47 /* CommonDeckView.swift in Sources */,
-				C378BAA92A569CED00479D47 /* Player.swift in Sources */,
 				C378BA492A53C29200479D47 /* AppDelegate.swift in Sources */,
 				C378BA4B2A53C29200479D47 /* SceneDelegate.swift in Sources */,
 				C378BA9F2A5655BF00479D47 /* NumberType.swift in Sources */,

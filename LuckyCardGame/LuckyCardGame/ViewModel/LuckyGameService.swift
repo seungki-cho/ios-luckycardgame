@@ -12,9 +12,8 @@ final class LuckyGameService {
     private var rule: LuckyGameRule
     private var deck: LuckyDeck = .init()
     
-    private var mainPlayer: Player = .init()
-    private var players: [Player] = []
-    private var floor: Player = .init()
+    private var players: [LuckyDeck] = []
+    private var floor: FloorDeck = .init()
     
     private let luckyCardMaker: LuckyCardMakerProtocol
     
