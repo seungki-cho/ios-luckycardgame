@@ -46,6 +46,7 @@ final class LuckyGameService {
     
     private func makeNewDeck() {
         let cards = luckyCardMaker.makeNewDeck()
+        deck.discardCard(numbers: NumberType.allCases)
         deck.appendCards(cards)
         deck.discardCard(numbers: rule.removalNumbers)
     }
