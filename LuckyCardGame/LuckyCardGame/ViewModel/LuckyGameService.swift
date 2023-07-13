@@ -10,7 +10,6 @@ import Foundation
 final class LuckyGameService {
     //MARK: - Property
     private var rule: LuckyGameRule
-    private var deck: LuckyDeck = .init()
     
     private var players: [LuckyDeck] = []
     private var floor: FloorDeck = .init()
@@ -27,13 +26,7 @@ final class LuckyGameService {
     //MARK: - Helper
     func changeRule(_ newRule: LuckyGameRule) {
         rule = newRule
-        dealCard()
-    }
-    
-    private func dealCard() {
-        clearGame()
-        makeNewDeck()
-        distributeCards()
+        distributeNewCards()
     }
     
     func getCardArray() -> [[LuckyCard]] {
@@ -47,23 +40,18 @@ final class LuckyGameService {
         floor = .init()
     }
     
-    private func makeNewDeck() {
-        deck = luckyCardMaker.makeNewDeck()
-        deck.discardCard(numbers: rule.removalNumbers)
-    }
-    
-    private func distributeCards() {
-        let mainCards = (0..<rule.playerCardCount).map { _ in deck.drawCard().flipped() }
-        mainPlayer.changeDeck(LuckyDeck(mainCards))
+    private func distributeNewCards() {
+        var deck = luckyCardMaker.makeNewDeck(without: rule.removalNumbers)
+        players = (0..<rule.playerCount).map { _ in LuckyDeck() }
         
-        for playerIndex in (0..<players.count) {
-            let cards = (0..<rule.playerCardCount).map { _ in deck.drawCard() }
-            players[playerIndex].changeDeck(LuckyDeck(cards))
+        players[0] = LuckyDeck(deck[0..<rule.playerCardCount].map{ $0.flipped() })
+        deck.removeFirst(rule.playerCardCount)
+        
+        for playerIndex in (1..<players.count) {
+            players[playerIndex] = LuckyDeck(Array(deck[0..<rule.playerCardCount]))
+            deck.removeFirst(rule.playerCardCount)
         }
         
-        let floorCards = (0..<rule.floorCardCount).map { _ in deck.drawCard()}
-        floor.changeDeck(LuckyDeck(floorCards))
-    }
     
     func sortMainPlayer() {
         mainPlayer.sortDeck()
