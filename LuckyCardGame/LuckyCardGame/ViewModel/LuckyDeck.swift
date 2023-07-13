@@ -17,7 +17,7 @@ final class LuckyDeck: CustomStringConvertible {
             !removalNumber.filter { card.isLike(number: $0) }.isEmpty
         }
     }
-    
+    #warning("고쳐")
     func drawCard() -> LuckyCard {
         deck.removeLast()
     }
@@ -32,5 +32,9 @@ final class LuckyDeck: CustomStringConvertible {
     
     func showCards() -> [LuckyCard] {
         deck
+    }
+    
+    func sort() {
+        deck.sort()
     }
 }
