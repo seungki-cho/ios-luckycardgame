@@ -8,14 +8,11 @@
 import Foundation
 
 struct Player {
-    private var hand: LuckyDeck = LuckyDeck()
+    private(set) var hand: LuckyDeck = LuckyDeck()
+    var cards: [LuckyCard] { hand.showCards() }
     
-    mutating func receiveCards(_ cards: [LuckyCard]) {
-        hand.appendCards(cards)
-    }
-    
-    func showCards() -> [LuckyCard] {
-        hand.showCards()
+    mutating func changeDeck(_ deck: LuckyDeck) {
+        hand = deck
     }
     
     mutating func sortDeck() {
