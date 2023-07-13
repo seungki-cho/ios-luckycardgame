@@ -9,17 +9,6 @@ import XCTest
 @testable import LuckyCardGame
 
 final class LuckyCardGameTests: XCTestCase {
-
-    var sut: LuckyGameService!
-    
-    override func setUpWithError() throws {
-        sut = LuckyGameService(rule: .threePlayer)
-    }
-
-    override func tearDownWithError() throws {
-        sut = nil
-    }
-    
     func test룰에따라카드를나눠주면_개수가일치한다() throws {
         try test네명룰일때_카드를나눠주면_개수가일치한다()
         try test세명룰일때_카드를나눠주면_개수가일치한다()
@@ -27,6 +16,7 @@ final class LuckyCardGameTests: XCTestCase {
     }
     func test세명룰일때_카드를나눠주면_개수가일치한다() throws {
         // Given
+        let sut = LuckyGameService(rule: .threePlayer, luckyCardMaker: LuckyCardMaker())
         let rule: LuckyGameRule = .threePlayer
         sut.changeRule(rule)
         // When
@@ -41,6 +31,7 @@ final class LuckyCardGameTests: XCTestCase {
     }
     func test네명룰일때_카드를나눠주면_개수가일치한다() throws {
         // Given
+        let sut = LuckyGameService(rule: .threePlayer, luckyCardMaker: LuckyCardMaker())
         let rule: LuckyGameRule = .fourPlayer
         sut.changeRule(rule)
         // When
@@ -56,6 +47,7 @@ final class LuckyCardGameTests: XCTestCase {
     }
     func test다섯명룰일때_카드를나눠주면_개수가일치한다() throws {
         // Given
+        let sut = LuckyGameService(rule: .threePlayer, luckyCardMaker: LuckyCardMaker())
         let rule: LuckyGameRule = .fivePlayer
         sut.changeRule(rule)
         // When
