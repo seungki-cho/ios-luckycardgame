@@ -12,6 +12,12 @@ final class LuckyDeck: CustomStringConvertible {
     
     var description: String { deck.map { $0.description }.joined(separator: ", ") }
     
+    var maximumSameCardCount: Int? {
+        deck.reduce(into: [Int: Int]()) { (dict, card) in
+            dict[card.numberType.rawValue] = (dict[card.numberType.rawValue] ?? 0) + 1
+        }.values.max()
+    }
+    
     func discardCard(numbers removalNumber: [NumberType] = []) {
         deck.removeAll { card in
             !removalNumber.filter { card.isLike(number: $0) }.isEmpty
