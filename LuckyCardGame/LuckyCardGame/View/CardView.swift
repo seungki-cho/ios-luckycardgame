@@ -86,7 +86,7 @@ final class CardView: UIView {
                                      width: bounds.width / 2,
                                      height: bounds.height / 2)
 
-        bottomNumberLabel.frame = CGRect(x: bounds.maxX - bounds.width / 3,
+        bottomNumberLabel.frame = CGRect(x: bounds.maxX - bounds.width / 2.5,
                                          y: bounds.maxY - bounds.height / 3,
                                          width: bounds.width / 3,
                                          height: bounds.height / 4)
